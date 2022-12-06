@@ -8,7 +8,7 @@ namespace Conexion_a_BBDD.Datos
         private string cadenaSQL = string.Empty;
        
         //Constructor de la conexion
-        public Conexion(string cadenaSQL)
+        public Conexion()
         {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).
                 AddJsonFile("appsettings.json").Build();

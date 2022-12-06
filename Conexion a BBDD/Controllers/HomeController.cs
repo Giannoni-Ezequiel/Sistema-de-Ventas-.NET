@@ -12,7 +12,7 @@ namespace Conexion_a_BBDD.Controllers
         {
             _logger = logger;
         }
-
+       
         public IActionResult Index()
         {
             return View();
