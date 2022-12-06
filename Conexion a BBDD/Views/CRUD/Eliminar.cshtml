@@ -10,7 +10,7 @@
     </div>
     <div class="card-body">
         <form asp-action="Eliminar" asp-controller="CRUD" method="post">
-        <input asp-for="Id" type="hidden" class="form-control" />
+        <input asp-for="id" type="hidden" class="form-control" />
             <div class="alert alert-danger" role="alert">
                 <p>¿Seguro desea eliminar el registro: @Html.DisplayTextFor(m => m.nombre)?</p>
             </div>

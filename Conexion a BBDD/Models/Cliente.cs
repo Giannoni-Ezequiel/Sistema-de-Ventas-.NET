@@ -3,7 +3,7 @@ namespace Conexion_a_BBDD.Models
 {
     public class Cliente
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         [Required(ErrorMessage = "Ingresar el nombre es obligatorio")]
         public string? nombre { get; set; }
         [Required(ErrorMessage = "Ingresar el telefono es obligatorio")]

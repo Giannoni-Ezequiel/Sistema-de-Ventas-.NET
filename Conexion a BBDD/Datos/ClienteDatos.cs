@@ -36,7 +36,7 @@ namespace Conexion_a_BBDD.Datos
                         //Añadiendo por cada vuelta un registro
                         objetoLista.Add(new Cliente()
                         {
-                            Id = Convert.ToInt32(lector["id"]),
+                            id = Convert.ToInt32(lector["id"]),
                             nombre = lector["nombre"].ToString(),
                             telefono = lector["telefono"].ToString(),
                             email = lector["email"].ToString()
@@ -65,7 +65,7 @@ namespace Conexion_a_BBDD.Datos
                 {
                     while (lector.Read())
                     {
-                        objetoCliente.Id = Convert.ToInt32(lector["id"]);
+                        objetoCliente.id = Convert.ToInt32(lector["id"]);
                         objetoCliente.nombre = Convert.ToString(lector["nombre"]);
                         objetoCliente.telefono = Convert.ToString(lector["telefono"]);
                         objetoCliente.email = Convert.ToString(lector["email"]);
@@ -119,7 +119,7 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd=new SqlCommand("Editar", conexionTemp);
-                    cmd.Parameters.AddWithValue("id", objetoCliente.Id);
+                    cmd.Parameters.AddWithValue("id", objetoCliente.id);
                     cmd.Parameters.AddWithValue("nombre", objetoCliente.nombre);
                     cmd.Parameters.AddWithValue("telefono", objetoCliente.telefono);
                     cmd.Parameters.AddWithValue("email", objetoCliente.email);
