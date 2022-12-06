@@ -58,7 +58,7 @@ namespace Conexion_a_BBDD.Datos
             {
                 conexionTemp.Open();
                 SqlCommand cmd = new SqlCommand("Obtener", conexionTemp);
-                cmd.Parameters.AddWithValue("id", id);
+                cmd.Parameters.AddWithValue("IdContacto", id); //id es de nuestra tabla, id_contacto es el generado ASº
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 using (var lector = cmd.ExecuteReader())
@@ -147,7 +147,7 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("Eliminar", conexionTemp);
-                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("IdContacto", id);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

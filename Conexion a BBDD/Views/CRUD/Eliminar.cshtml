@@ -12,7 +12,7 @@
         <form asp-action="Eliminar" asp-controller="CRUD" method="post">
         <input asp-for="id" type="hidden" class="form-control" />
             <div class="alert alert-danger" role="alert">
-                <p>¿Seguro desea eliminar el registro: @Html.DisplayTextFor(m => m.nombre)?</p>
+                <p>¿Seguro desea eliminar el registro: @Model.nombre ?</p>
             </div>
             <br />
             <button type="submit" class="btn btn-primary">Eliminar</button>
