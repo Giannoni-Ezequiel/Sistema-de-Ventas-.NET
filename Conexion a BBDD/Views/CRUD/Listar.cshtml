@@ -13,29 +13,38 @@
         <a asp-action="Guardar" asp-controller="CRUD" class="btn btn-primary">Crear Nuevo</a>
         <hr />
      
-        <table class="d-lg-table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Telefono</th>
-                    <th>Email</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">CUIT</th>
+                    <th scope="col">Razon Social</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">IDUser</th>
+                    <th scope="col">ACCION</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach (var item in Model){
-                <tr> 
-                    <td>@item.id</td>
-                    <td>@item.nombre</td>
-                    <td>@item.telefono</td>
-                    <td>@item.email</td>
-                    <td>
-                        <a asp-action="Editar" asp-controller="CRUD" class="btn-primary btn-sm" asp-route-id="@item.id">Editar</a>
-                        <a asp-action="Eliminar" asp-controller="CRUD" class="btn btn-danger" asp-route-id="@item.id">Eliminar</a>
-                    </td>
-                </tr>
+            
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr> 
+                            <th>@item.id_cliente</th>
+                            <th>@item.clie_nombre</th>
+                            <th>@item.clie_apellido</th>
+                            <th>@item.clie_dni</th>
+                            <th>@item.clie_cuit</th>
+                            <th>@item.clie_razon_social</th>
+                            <th>@item.clie_tipo</th>
+                            <th>@item.clie_id_usuario</th>
+                            <td><a asp-action="Editar" asp-controller="CRUD" class="btn-primary btn-sm" asp-route-id="@item.id_cliente">Editar</a></td>
+                            <td><a asp-action="Eliminar" asp-controller="CRUD" class="btn btn-danger" asp-route-id="@item.id_cliente">Eliminar</a></td>
+                        </tr>
+                    </tbody>
                 }
-            </tbody>
         </table>
     </div>
 </div>

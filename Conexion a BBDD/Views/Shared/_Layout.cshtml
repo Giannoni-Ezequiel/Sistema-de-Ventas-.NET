@@ -19,20 +19,24 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Listar">Listar</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Guardar">Guardar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Editar">Editar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Eliminar">Eliminar</a>
-                        </li>
-                        
+                        @if (User.IsInRole("admin") || User.IsInRole("supervisor"))
+                            {
+                                <li class="nav-item active">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Listar">Clientes</a>
+                                    </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Empleado" asp-action="Index">Empleados</a>
+                                    </li>
+                                }
+                        @if (User.IsInRole("cliente"))
+                            {
+                                //<li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Producto" asp-action="mostrarProducto">Productos</a></li>
+                                <li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Compras</a></li>
+                            }
+                            <li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Salir">Salir</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,5 +57,16 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <!--g@if (Usuario.IsAuthenticated)
+    {
+        <center>
+            <h2>
+                Estas Logueado = g@Usuario.usua_nombre
+            </h2>
+            <form asp-controller="Security" asp-action="SignOut" method="post">
+                <button type="submit">Salir</button>
+            </form>
+        </center>    
+    }-->
 </body>
 </html>

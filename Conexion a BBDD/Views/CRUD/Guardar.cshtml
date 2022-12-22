@@ -11,20 +11,37 @@
     </div>
     <div class="card-body">
         <form asp-action="Guardar" asp-controller="CRUD" method="post">
-            <div class="mb-3">
-                <label for="form-label">Nombre</label>
-                <input asp-for="nombre" type="text" class="form-control">
-                <span asp-validation-for="nombre" class="text-danger"></span>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input asp-for="clie_nombre" type="text" class="form-control">
             </div>
-            <div class="mb-3">
-                <label for="form-label">Telefono</label>
-                <input asp-for="telefono" type="text" class="form-control">
-                <span asp-validation-for="telefono" class="text-danger"></span>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Apellido</label>
+                <input asp-for="clie_apellido" type="text" class="form-control">
             </div>
-            <div class="mb-3" text="center">
-                <label for="form-label">Email</label>
-                <input asp-for="email" type="text" class="form-control">
-                <span asp-validation-for="email" class="text-danger"></span>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Dni</label>
+                <input asp-for="clie_dni" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Cuit</label>
+                <input asp-for="clie_cuit" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Razón social</label>
+                <input asp-for="clie_razon_social" type="text" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+                <select asp-for="clie_tipo" class="form-select form-control" id="inputGroupSelect01">
+                    <option selected>Elige...</option>
+                    <option value="Particular">Particular</option>
+                    <option value="Empresa">Empresa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Id Usuario</label>
+                <input asp-for="clie_id_usuario" type="text" class="form-control">
             </div>
             <br />
             <button type="submit" class="btn btn-primary"> Guardar</button>

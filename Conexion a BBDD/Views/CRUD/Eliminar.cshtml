@@ -9,10 +9,18 @@
         Eliminar informacion de cliente
     </div>
     <div class="card-body">
+        <dl>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.clie_nombre)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayFor(model => model.clie_apellido)
+            </dt>
+        </dl>
         <form asp-action="Eliminar" asp-controller="CRUD" method="post">
-        <input asp-for="id" type="hidden" class="form-control" />
+            <input asp-for="id_cliente" type="hidden" class="form-control" />
             <div class="alert alert-danger" role="alert">
-                <p>¿Seguro desea eliminar el registro: @Model.nombre ?</p>
+                <p>¿Seguro desea eliminar el registro?</p>
             </div>
             <br />
             <button type="submit" class="btn btn-primary">Eliminar</button>

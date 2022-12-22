@@ -75,7 +75,7 @@ namespace Conexion_a_BBDD.Controllers
         [HttpPost]
         public IActionResult Eliminar(Cliente objetoCliente)
         {
-            var respuesta = clienteDatos.Eliminar(objetoCliente.id);
+            var respuesta = clienteDatos.Eliminar(objetoCliente.id_cliente);
             if (respuesta)
             {
                 return RedirectToAction("Listar");
