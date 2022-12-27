@@ -37,7 +37,7 @@ namespace Conexion_a_BBDD.Controllers
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Listar", "CRUD");
             }
             else 
             {

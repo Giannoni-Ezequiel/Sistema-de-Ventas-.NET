@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Conexion_a_BBDD.Datos;
 using Conexion_a_BBDD.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Conexion_a_BBDD.Controllers
 {
@@ -9,6 +10,7 @@ namespace Conexion_a_BBDD.Controllers
     {
         //Creamos instancia conexion
         ClienteDatos clienteDatos = new ClienteDatos();
+        // [Authorize(Roles = "admin")]
         public IActionResult Listar()
         {
             var objetoLista = clienteDatos.Listar();

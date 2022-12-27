@@ -15,7 +15,7 @@ namespace Conexion_a_BBDD.Controllers
             _context = context;
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
             return View();
