@@ -84,13 +84,10 @@
                             @if (User.IsInRole("cliente"))
                                 {
                             <li class="nav-item active">
-                                <a class="nav-link" asp-area="" asp-controller="Producto" asp-action="VisualizarProducto">Productos</a>
+                                <a class="nav-link" asp-area="" asp-controller="Producto" asp-action="VisualizarProductos">Productos</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" asp-area="" asp-controller="Orden" asp-action="ListarOrden">Orden</a>
-                            </li>
-                            <li class="nav-item active">
-                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Compras</a>
                             </li>
                                 }
                             <li class="nav-item active">

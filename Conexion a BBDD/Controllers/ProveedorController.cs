@@ -9,7 +9,7 @@ namespace Conexion_a_BBDD.Controllers
     {
         ProveedorDatos ProveedorDatos = new ProveedorDatos();
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin, vendedor")]
         public IActionResult ListarProveedor()
         {
             var oLista = ProveedorDatos.ListarProveedor();

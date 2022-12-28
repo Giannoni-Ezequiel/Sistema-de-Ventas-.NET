@@ -10,7 +10,7 @@ namespace Conexion_a_BBDD.Controllers
     public class Detalle_ordenController : Controller
     {
         Detalle_ordenDatos Detalle_ordenDatos = new Detalle_ordenDatos();
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin, vendedor")]
         public IActionResult ListarDetalle_orden()
         {
             var oLista = Detalle_ordenDatos.ListarDetalle_orden();

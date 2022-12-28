@@ -11,7 +11,7 @@ namespace Conexion_a_BBDD.Controllers
     {
         categorias_proveedorDatos categorias_proveedorDatos = new categorias_proveedorDatos();
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin, vendedor")]
         public IActionResult Listarcategorias_proveedor()
         {
             var oLista = categorias_proveedorDatos.Listarcategorias_proveedor();
