@@ -38,10 +38,10 @@ namespace Conexion_a_BBDD.Datos
                             proveedorAsociado = new Proveedor()
                             {
                                 id_proveedor = Convert.ToInt32(lector["id_proveedor"]),
-                                prove_nombre = Convert.ToString(lector["prove_nombre"]),
-                                prove_apellido = Convert.ToString(lector["prove_apellido"]),
-                                prove_direccion = Convert.ToString(lector["prove_direccion"]),
-                                prove_cuit = Convert.ToString(lector["prove_cuit"])
+                                provee_nombre = Convert.ToString(lector["provee_nombre"]),
+                                provee_apellido = Convert.ToString(lector["provee_apellido"]),
+                                provee_direccion = Convert.ToString(lector["provee_direccion"]),
+                                provee_cuit = Convert.ToString(lector["provee_cuit"])
                             }
                         });
                     }//Aca ya no existe la variable lector, se destruyo
@@ -49,18 +49,17 @@ namespace Conexion_a_BBDD.Datos
             }
             return oLista;
         }
-        /*public List<Producto> MostrarProductos()
+        public List<Producto> VisualizarProductos()
         {
             var oLista = new List<Producto>();
             //Instancia de la conexion
-
             var conexion = new Conexion();
             //Usando using definimos el tiempo de vida de la conexion
             using (var conexionTemp = new SqlConnection(conexion.getCadenaSQL()))
             {
                 //Aca abro la conexion
                 conexionTemp.Open();
-                SqlCommand cmd = new SqlCommand("MostrarProductos", conexionTemp);
+                SqlCommand cmd = new SqlCommand("VisualizarProductos", conexionTemp);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //Comienzo la lectura de datos
                 using (var lector = cmd.ExecuteReader())
@@ -81,7 +80,7 @@ namespace Conexion_a_BBDD.Datos
                 }
             }
             return oLista;
-        }*/
+        }
         public Producto ObtenerProductos(int id_producto)
         {
             var oProducto = new Producto();

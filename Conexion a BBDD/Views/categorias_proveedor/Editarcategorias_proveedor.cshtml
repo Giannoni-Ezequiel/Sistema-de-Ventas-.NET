@@ -1,8 +1,33 @@
-﻿
+﻿@model categorias_proveedor
 @{
     ViewData["Title"] = "Editarcategorias_proveedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Editarcategorias_proveedor</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    </head>
+    <body>
+        <h1>Editar Categorias de Proveedor  @Html.DisplayTextFor(m => m.id_proveedor)</h1>
+        <form asp-action="Editarcategorias_proveedor" asp-controller="categorias_proveedor" method="post">
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">ID Proveedor</label>
+                    <input asp-for="id_proveedor" type="text" class="form-control" />
+                    </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">ID Categoria</label>
+                    <input asp-for="id_categoria" type="text" class="form-control">
+                </div>            
+                <button name="submit" type="submit" id="guardar-submit" data-submit="...guardando">Guardar</button>
+            </div>
+        </form>
+    </body>
+</html>
 

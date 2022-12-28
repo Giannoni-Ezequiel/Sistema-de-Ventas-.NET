@@ -1,8 +1,34 @@
-﻿
+﻿@model Detalle_orden
 @{
     ViewData["Title"] = "GuardarDetalle_orden";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>GuardarDetalle_orden</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+    <h1>Guardar Detalle_orden funciona</h1>
+    <form asp-action="GuardarDetalle_orden" asp-controller="Detalle_orden" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Precio</label>
+            <input asp-for="det_ord_precio" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Cantidad</label>
+            <input asp-for="det_ord_cantidad" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">ID Producto</label>
+            <input asp-for="id_producto" type="text" class="form-control">
+            </div>
+            <button name="submit" type="submit" id="guardar-submit" data-submit="...Sending">Submit</button>
+        </form>
+    </body>
+</html>
 

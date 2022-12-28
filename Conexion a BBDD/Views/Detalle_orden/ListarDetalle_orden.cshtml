@@ -1,8 +1,69 @@
-﻿
+﻿@model List<Detalle_orden>
 @{
     ViewData["Title"] = "ListarDetalle_orden";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>ListarDetalle_orden</h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Index</title>
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+	<h1>Listar Detalle_orden funciona</h1>
+	<div class="container">
+		<div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2>Manejar <b>Detalle_orden</b></h2>
+						</div>
+						<div class="col-xs-6">
+							<a asp-action="GuardarDetalle_orden" asp-controller="Detalle_orden" class="btn btn-success">
+								<i class="material-icons">&#xE147;</i> <span>Crear Detalle_orden</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>ID Orden</th>
+							<th>ID Detalle Orden</th>
+                            <th>Detalle Ord. Precio</th>
+                            <th>Detalle Ord. Cantidad</th>
+                            <th>ID Producto</th>
+							<th>Acción</th>
+						</tr>
+					</thead>
+					@foreach (var item in Model)
+					{
+						<tbody>
+							<tr>
+								<th>@item.id_orden</th>
+								<th>@item.id_detalle_orden</th>
+								<th>@item.det_ord_precio</th>
+								<th>@item.det_ord_cantidad</th>
+								<th>@item.id_producto</th>
+								<td>
+									<a asp-action="EditarDetalle_orden" asp-controller="Detalle_orden" class="edit" asp-route-id="@item.id_detalle_orden">
+										<i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+									</a>
+									<a asp-action="EliminarDetalle_orden" asp-controller="Detalle_orden" class="bdanger" asp-route-id="@item.id_detalle_orden">
+										<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					}
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
 

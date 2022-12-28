@@ -10,7 +10,7 @@
         Lista de Clientes
     </div>
     <div class="card-body">
-        <a asp-action="Guardar" asp-controller="CRUD" class="btn btn-primary">Crear Nuevo</a>
+        <a asp-action="Guardar" asp-controller="Cliente" class="btn btn-primary">Crear Nuevo</a>
         <hr />
      
         <table class="table">
@@ -32,8 +32,8 @@
                 @foreach (var item in Model)
                 {
                     <tbody>
-                        <tr> 
-                            <th>@item.id_cliente</th>
+                        <tr>
+                        <th>@item.id_cliente</th>
                             <th>@item.clie_nombre</th>
                             <th>@item.clie_apellido</th>
                             <th>@item.clie_dni</th>

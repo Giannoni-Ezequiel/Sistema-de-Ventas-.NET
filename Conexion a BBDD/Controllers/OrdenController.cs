@@ -10,7 +10,7 @@ namespace Conexion_a_BBDD.Controllers
         OrdenDatos OrdenDatos = new OrdenDatos();
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public IActionResult ListarOrden()
         {
             var oLista = OrdenDatos.ListarOrden();
             return View(oLista);

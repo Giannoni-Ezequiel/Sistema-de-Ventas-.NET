@@ -10,17 +10,17 @@ namespace Conexion_a_BBDD.Controllers
         ProductoDatos ProductoDatos = new ProductoDatos();
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public IActionResult ListarProducto()
         {
             var oLista = ProductoDatos.ListarProductos();
             return View(oLista);
         }
-        /*[Authorize(Roles = "cliente, admin")]
-        public IActionResult MostrarProductos()
+        [Authorize(Roles = "cliente, admin")]
+        public IActionResult VisualizarProductos()
         {
-            var oLista = ProductoDatos.MostrarProductos();
+            var oLista = ProductoDatos.VisualizarProductos();
             return View(oLista);
-        }*/
+        }
         public IActionResult GuardarProductos()
         {
             return View();

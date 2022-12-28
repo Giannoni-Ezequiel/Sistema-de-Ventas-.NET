@@ -1,8 +1,25 @@
-﻿
+﻿@model categorias_proveedor
 @{
     ViewData["Title"] = "Eliminarcategorias_proveedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Eliminarcategorias_proveedor</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <h1>Eliminar @Html.DisplayTextFor(m => m.id_proveedor)</h1>
+        <form asp-action="Eliminarcategorias_proveedor" asp-controller="categorias_proveedor" method="post">
+            <input asp-for="id_proveedor" type="hidden" class="form-control" />
+            <input type="hidden" asp-for="id_categoria" class="form-control" />
+            <p>Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.id_proveedor)?</p>
+            <button type="submit" class="btn-danger">Eliminar</button>
+        </form>
+    </body>
+</html>
 

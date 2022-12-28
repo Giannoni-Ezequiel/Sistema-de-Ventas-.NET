@@ -10,7 +10,7 @@ namespace Conexion_a_BBDD.Controllers
         ProveedorDatos ProveedorDatos = new ProveedorDatos();
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public IActionResult ListarProveedor()
         {
             var oLista = ProveedorDatos.ListarProveedor();
             return View(oLista);

@@ -10,7 +10,7 @@ namespace Conexion_a_BBDD.Controllers
         UsuarioDatos UsuarioDatos = new UsuarioDatos();
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public IActionResult ListarUsuario()
         {
             var oLista = UsuarioDatos.ListarUsuarios();
             return View(oLista);

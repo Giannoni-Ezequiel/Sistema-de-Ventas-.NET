@@ -1,8 +1,31 @@
-﻿
+﻿@model categorias_proveedor
 @{
     ViewData["Title"] = "Guardarcategorias_proveedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Guardarcategorias_proveedor</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <h2>Guardar Categoria/Proveedor</h2>
+        <form asp-action="Guardarcategorias_proveedor" asp-controller="categorias_proveedor" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">ID Proveedor</label>
+                <input asp-for="id_proveedor" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">ID Categoria</label>
+                <input asp-for="id_categoria" type="text" class="form-control">
+            </div>
+            <br />
+            <button name="submit" type="submit" id="guardar-submit" data-submit="...Sending">Submit</button>
+        </form>
+    </body>
+</html>
 

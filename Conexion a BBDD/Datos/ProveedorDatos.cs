@@ -22,10 +22,10 @@ namespace Conexion_a_BBDD.Datos
                         oLista.Add(new Proveedor()
                         {
                             id_proveedor = Convert.ToInt32(lector["id_proveedor"]),
-                            prove_nombre = Convert.ToString(lector["prove_nombre"]),
-                            prove_apellido = Convert.ToString(lector["prove_apellido"]),
-                            prove_direccion = Convert.ToString(lector["prove_direccion"]),
-                            prove_cuit = Convert.ToString(lector["prove_cuit"])
+                            provee_nombre = Convert.ToString(lector["provee_nombre"]),
+                            provee_apellido = Convert.ToString(lector["provee_apellido"]),
+                            provee_direccion = Convert.ToString(lector["provee_direccion"]),
+                            provee_cuit = Convert.ToString(lector["provee_cuit"])
                         });
                     }
                 }
@@ -52,10 +52,10 @@ namespace Conexion_a_BBDD.Datos
                         while (lector.Read())
                         {
                             oProveedor.id_proveedor = Convert.ToInt32(lector["id_proveedor"]);
-                            oProveedor.prove_nombre = Convert.ToString(lector["prove_nombre"]);
-                            oProveedor.prove_apellido = Convert.ToString(lector["prove_apellido"]);
-                            oProveedor.prove_direccion = Convert.ToString(lector["prove_direccion"]);
-                            oProveedor.prove_cuit = Convert.ToString(lector["prove_cuit"]);
+                            oProveedor.provee_nombre = Convert.ToString(lector["provee_nombre"]);
+                            oProveedor.provee_apellido = Convert.ToString(lector["provee_apellido"]);
+                            oProveedor.provee_direccion = Convert.ToString(lector["provee_direccion"]);
+                            oProveedor.provee_cuit = Convert.ToString(lector["provee_cuit"]);
                         }
                     }
                 }
@@ -78,10 +78,10 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarProveedor", conexionTemp);
 
-                    cmd.Parameters.AddWithValue("prove_nombre", oProveedor.prove_nombre);
-                    cmd.Parameters.AddWithValue("prove_apellido", oProveedor.prove_apellido);
-                    cmd.Parameters.AddWithValue("prove_direccion", oProveedor.prove_direccion);
-                    cmd.Parameters.AddWithValue("prove_cuit", oProveedor.prove_cuit);
+                    cmd.Parameters.AddWithValue("provee_nombre", oProveedor.provee_nombre);
+                    cmd.Parameters.AddWithValue("provee_apellido", oProveedor.provee_apellido);
+                    cmd.Parameters.AddWithValue("provee_direccion", oProveedor.provee_direccion);
+                    cmd.Parameters.AddWithValue("provee_cuit", oProveedor.provee_cuit);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -105,10 +105,10 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("EditarProveedor", conexionTemp);
                     cmd.Parameters.AddWithValue("id_proveedor", oProveedor.id_proveedor);
-                    cmd.Parameters.AddWithValue("prove_nombre", oProveedor.prove_nombre);
-                    cmd.Parameters.AddWithValue("prove_apellido", oProveedor.prove_apellido);
-                    cmd.Parameters.AddWithValue("prove_direccion", oProveedor.prove_direccion);
-                    cmd.Parameters.AddWithValue("prove_cuit", oProveedor.prove_cuit);
+                    cmd.Parameters.AddWithValue("provee_nombre", oProveedor.provee_nombre);
+                    cmd.Parameters.AddWithValue("provee_apellido", oProveedor.provee_apellido);
+                    cmd.Parameters.AddWithValue("provee_direccion", oProveedor.provee_direccion);
+                    cmd.Parameters.AddWithValue("provee_cuit", oProveedor.provee_cuit);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

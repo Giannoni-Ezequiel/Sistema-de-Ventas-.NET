@@ -39,7 +39,7 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("ObtenerCategoria", conexionTemp);
-                    cmd.Parameters.AddWithValue("id_Categ", id_categoria);
+                    cmd.Parameters.AddWithValue("id_categoria", id_categoria);
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (var lector = cmd.ExecuteReader())
                     {

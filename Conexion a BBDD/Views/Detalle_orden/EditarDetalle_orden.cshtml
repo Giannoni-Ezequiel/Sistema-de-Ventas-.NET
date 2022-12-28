@@ -1,8 +1,37 @@
-﻿
+﻿@model Detalle_orden
 @{
     ViewData["Title"] = "EditarDetalle_orden";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EditarDetalle_orden</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+    <h1>Editar Detalle_orden @Html.DisplayTextFor(m => m.id_detalle_orden)</h1>
+        <form asp-action="EditarDetalle_orden" asp-controller="Detalle_orden" method="post">
+            <div class="form-group">
+            <input asp-for="id_detalle_orden" type="text" class="form-control" />
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Precio</label>
+                <input asp-for="det_ord_precio" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Cantidad</label>
+                <input asp-for="det_ord_cantidad" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Producto ID</label>
+                <input asp-for="id_producto" type="text" class="form-control">
+                </div>
+                <button name="submit" type="submit" id="guardar-submit" data-submit="...guardando">Guardar</button>
+            </div>
+        </form>
+    </body>
+</html>
 

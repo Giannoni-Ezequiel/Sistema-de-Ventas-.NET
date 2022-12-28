@@ -10,7 +10,7 @@ namespace Conexion_a_BBDD.Controllers
         PromocionesDatos PromocionesDatos = new PromocionesDatos();
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public IActionResult ListarPromociones()
         {
             var oLista = PromocionesDatos.ListarPromociones();
             return View(oLista);

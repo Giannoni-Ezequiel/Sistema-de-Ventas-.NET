@@ -26,24 +26,16 @@ namespace Conexion_a_BBDD.Controllers
                     new Claim(ClaimTypes.Name, usuario.usua_nombre),
                     new Claim("usua_correo", usuario.usua_correo)
                 };
-
-                /* foreach (int rol in userAutenticado.id_Rol)
-                 {
-                     claims.Add(new Claim(ClaimTypes.Role, rol));
-                 }*/
                 claims.Add(new Claim(ClaimTypes.Role, usuario.rolAsociado.rol_detalle));
-
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-
-                return RedirectToAction("Listar", "CRUD");
+                return RedirectToAction("Index", "Home");
             }
             else 
             {
                 TempData["Mensaje"] = "El usuario no existe!";
                 return View(); }
-        }
+                }
         public async Task<IActionResult> Salir()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

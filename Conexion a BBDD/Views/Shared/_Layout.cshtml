@@ -1,75 +1,135 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] CRUD</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Conexion_a_BBDD.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DomoRobot</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        @if (User.IsInRole("admin") || User.IsInRole("supervisor"))
-                            {
-                                <li class="nav-item active">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Listar">Clientes</a>
-                                    </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Editar">Editar Clientes</a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="ListarProducto">Empleados</a>
-                                    </li>
-                                }
-                        @if (User.IsInRole("cliente"))
-                            {
-                                //<li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Producto" asp-action="mostrarProducto">Productos</a></li>
-                                <li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Compras</a></li>
-                            }
-                            <li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Salir">Salir</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] DomoRobot</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/Conexion_a_BBDD.styles.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/ionicons.min.css">
 
-    <footer class="border-top footer text-muted">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+                <div class="container">
+
+                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DomoRobot</a>
+	              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="true" aria-label="Toggle navigation">
+	                <span class="oi oi-menu"></span> Menu
+	              </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto">
+                            
+                          @if (User.IsInRole("admin"))
+                            {
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Clientes
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item"  asp-area="" asp-controller="CRUD" asp-action="Listar">Clientes</a></li>
+                                            <li><a class="dropdown-item"  asp-area="" asp-controller="Tipo_de_cliente" asp-action="ListarTipo_de_cliente">Tipo de cliente</a></li>
+                                        </ul>
+                                    </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Empleado" asp-action="Index">Empleado</a>
+                            </li>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Productos
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="ListarProducto">Producto</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Promocion_producto" asp-action="ListarPromocion_producto">Promocion de productos</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Promociones" asp-action="ListarPromociones">Promociones</a>
+                                </div>
+                            </li>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Usuarios
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="ListarUsuario">Usuario</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Rol" asp-action="ListarRol">Rol</a>
+                                </div>
+                            </li>
+                                }
+                            @if (User.IsInRole("vendedor"))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Ordenes
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Orden" asp-action="ListarOrden">Orden</a>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Detalle_orden" asp-action="ListarDetalle_orden">Detalle de la Orden</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Proveedores
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Proveedor" asp-action="ListarProveedor">Proveedor</a>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Categoria" asp-action="Listar">Categoria</a>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="categorias_proveedor" asp-action="Listarcategorias_proveedor">Categoria/Proveedor</a>
+                                    </div>
+                                </li>
+                            }
+                            @if (User.IsInRole("cliente"))
+                                {
+                            <li class="nav-item active">
+                                <a class="nav-link" asp-area="" asp-controller="Producto" asp-action="VisualizarProducto">Productos</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" asp-area="" asp-controller="Orden" asp-action="ListarOrden">Orden</a>
+                            </li>
+                            <li class="nav-item active">
+                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Compras</a>
+                            </li>
+                                }
+                            <li class="nav-item active">
+                                <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Salir">Salir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
         <div class="container">
-            &copy; 2022 - Conexion_a_BBDD - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-    <!--g@if (Usuario.IsAuthenticated)
-    {
-        <center>
-            <h2>
-                Estas Logueado = g@Usuario.usua_nombre
-            </h2>
-            <form asp-controller="Security" asp-action="SignOut" method="post">
-                <button type="submit">Salir</button>
-            </form>
-        </center>    
-    }-->
-</body>
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2022 - Conexion_a_BBDD - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        
+        @await RenderSectionAsync("Scripts", required: false)
+        <!--g@if (Usuario.IsAuthenticated)
+        {
+            <center>
+                <h2>
+                    Estas Logueado = g@Usuario.usua_nombre
+                </h2>
+                <form asp-controller="Security" asp-action="SignOut" method="post">
+                    <button type="submit">Salir</button>
+                </form>
+            </center>    
+        }-->
+    </body>
 </html>

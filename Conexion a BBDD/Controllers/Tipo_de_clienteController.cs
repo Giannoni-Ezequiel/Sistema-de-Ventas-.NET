@@ -10,7 +10,7 @@ namespace Conexion_a_BBDD.Controllers
         Tipo_de_clienteDatos Tipo_de_clienteDatos = new Tipo_de_clienteDatos();
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public IActionResult ListarTipo_de_cliente()
         {
             var oLista = Tipo_de_clienteDatos.ListarTipo_De_Cliente();
             return View(oLista);

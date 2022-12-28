@@ -10,7 +10,7 @@ namespace Conexion_a_BBDD.Controllers
         CategoriaDatos categoriaDatos = new CategoriaDatos();
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public IActionResult Listar()
         {
             var oLista = categoriaDatos.ListarCategoria();
             return View(oLista);

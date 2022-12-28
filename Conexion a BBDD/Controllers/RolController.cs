@@ -10,7 +10,7 @@ namespace Conexion_a_BBDD.Controllers
         RolDatos rolesDatos = new RolDatos();
 
         [Authorize(Roles = "administrador, supervisor")]
-        public IActionResult Index()
+        public IActionResult ListarRol()
         {
             var oLista = rolesDatos.ListarRol();
             return View(oLista);

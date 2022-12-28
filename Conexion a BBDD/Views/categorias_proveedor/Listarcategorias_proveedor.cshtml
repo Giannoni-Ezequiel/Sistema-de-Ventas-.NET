@@ -1,8 +1,60 @@
-﻿
+﻿@model List<categorias_proveedor>
 @{
     ViewData["Title"] = "Listarcategorias_proveedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Listarcategorias_proveedor</h1>
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title>Index</title>
+		<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	</head>
+	<body>
+		<h1>Listar Proveedor y categoria funciona</h1>
+		<div class="container">
+			<div class="table-responsive">
+				<div class="table-wrapper">
+					<div class="table-title">
+						<div class="row">
+							<div class="col-xs-6">
+								<h2>Manejar <b>proveedores con categorias</b></h2>
+							</div>
+							<div class="col-xs-6">
+							<a asp-action="Guardarcategorias_proveedor" asp-controller="categorias_proveedor" class="btn btn-success">
+									<i class="material-icons">&#xE147;</i> <span>Crear Provee/Categ</span></a>
+							</div>
+						</div>
+					</div>
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>ID proveedor</th>
+								<th>ID Categoria</th>
+								<th>Acción</th>
+							</tr>
+						</thead>
+						@foreach (var item in Model)
+						{
+							<tbody>
+								<tr>
+									<th>@item.id_proveedor</th>
+									<th>@item.id_categoria</th>
+									<td>
+									<a asp-action="Editarcategorias_proveedor" asp-controller="categorias_proveedor" class="edit" asp-route-id="@item.id_proveedor">
+											<i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+									<a asp-action="Eliminarcategorias_proveedor" asp-controller="categorias_proveedor" class="bdanger" asp-route-id="@item.id_proveedor">
+											<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+									</td>
+								</tr>
+							</tbody>
+						}
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
 

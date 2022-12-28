@@ -1,8 +1,24 @@
-﻿
+﻿@model Categoria
 @{
     ViewData["Title"] = "Guardar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Guardar</h1>
+<div class="card">
+    <div class="card-header">
+        Nueva Categoria
+    </div>
+    <div class="card-body">
+        <form asp-action="Guardar" asp-controller="Categoria" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input asp-for="categ_detalle" type="text" class="form-control">
+            </div>
+            
+            <br />
+            <button type="submit" class="btn btn-primary"> Guardar</button>
+            <a asp-action="Listar" asp-controller="Categoria" class="btn btn-warning">Volver al listado</a>
+        </form>
+    </div>
+</div>
 

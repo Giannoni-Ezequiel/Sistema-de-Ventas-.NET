@@ -26,7 +26,7 @@ namespace Conexion_a_BBDD.Datos
                             proveedorCategoria = new Proveedor()
                             {
                                 id_proveedor = Convert.ToInt32(lector["id_proveedor"]),
-                                prove_nombre = Convert.ToString(lector["prove_nombre"]),
+                                provee_nombre = Convert.ToString(lector["provee_nombre"]),
                             },
                             categoriaProveedor = new Categoria()
                             {
@@ -81,6 +81,7 @@ namespace Conexion_a_BBDD.Datos
                 using (var conexionTemp = new SqlConnection(conexion.getCadenaSQL()))
                 {
                     conexionTemp.Open();
+
                     SqlCommand cmd = new SqlCommand("GuardarCategorias_Proveedor", conexionTemp);
                     cmd.Parameters.AddWithValue("id_proveedor", ocategorias_proveedor.id_proveedor);
                     cmd.Parameters.AddWithValue("id_categoria", ocategorias_proveedor.id_categoria);

@@ -4,12 +4,12 @@
     {
         public int id_proveedor { get; set; }
 
-        public string? prove_nombre { get; set; }
+        public string? provee_nombre { get; set; }
 
-        public string? prove_apellido { get; set; }
+        public string? provee_apellido { get; set; }
 
-        public string? prove_direccion { get; set; }
+        public string? provee_direccion { get; set; }
 
-        public string? prove_cuit { get; set; }
+        public string? provee_cuit { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Conexion_a_BBDD.Controllers
         Promocion_productoDatos Promocion_productoDatos = new Promocion_productoDatos();
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public IActionResult ListarPromocion_producto()
         {
             var oLista = Promocion_productoDatos.ListarPromocion_producto();
             return View(oLista);
