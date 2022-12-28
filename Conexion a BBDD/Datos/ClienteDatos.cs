@@ -28,7 +28,6 @@ namespace Conexion_a_BBDD.Datos
                 //Instacio un objeto para las query y relaciono con el storedprocedure
                 SqlCommand cmd = new SqlCommand("ListarClientes", conexionTemp);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 using (var lector = cmd.ExecuteReader())
                 {
                     while (lector.Read())
@@ -50,7 +49,6 @@ namespace Conexion_a_BBDD.Datos
             }
             return objetoLista;
         }
-
         public Cliente Obtener(int id)
         {
             var objetoCliente = new Cliente();
@@ -88,12 +86,9 @@ namespace Conexion_a_BBDD.Datos
             }
             return objetoCliente;
         }
-
-
         public bool Guardar(Cliente objetoCliente)
         {
             bool respuesta;
-
             try
             {
                 var conexion = new Conexion();
@@ -121,7 +116,6 @@ namespace Conexion_a_BBDD.Datos
             }
             return respuesta;
         } 
-
         public bool Editar(Cliente objetoCliente)
         {
             bool respuesta;
@@ -153,7 +147,6 @@ namespace Conexion_a_BBDD.Datos
             }
             return respuesta;
         }
-        
         public bool Eliminar(int id_cliente)
         {
             bool respuesta;
@@ -163,7 +156,7 @@ namespace Conexion_a_BBDD.Datos
                 using(var conexionTemp = new SqlConnection(conexion.getCadenaSQL()))
                 {
                     conexionTemp.Open();
-                    SqlCommand cmd = new SqlCommand("EliminarClientes", conexionTemp);
+                    SqlCommand cmd = new SqlCommand("ELiminarClientes", conexionTemp);
                     cmd.Parameters.AddWithValue("id_cliente", id_cliente);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

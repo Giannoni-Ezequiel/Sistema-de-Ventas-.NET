@@ -199,7 +199,7 @@ namespace Conexion_a_BBDD.Datos
                 using (var conexionTemp = new SqlConnection(conexion.getCadenaSQL()))
                 {
                     conexionTemp.Open();
-                    SqlCommand cmd = new SqlCommand("EliminarUsuario", conexionTemp);
+                    SqlCommand cmd = new SqlCommand("ELiminarUsuario", conexionTemp);
                     cmd.Parameters.AddWithValue("id_usuario", id_usuario);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
