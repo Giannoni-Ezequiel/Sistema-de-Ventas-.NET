@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Rotiseria</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DomoRobot</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,10 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Listar">Clientes</a>
                                     </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Empleado" asp-action="Index">Empleados</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="CRUD" asp-action="Editar">Editar Clientes</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="ListarProducto">Empleados</a>
                                     </li>
                                 }
                         @if (User.IsInRole("cliente"))
