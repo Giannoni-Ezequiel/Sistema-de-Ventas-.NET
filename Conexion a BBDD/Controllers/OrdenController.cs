@@ -5,24 +5,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conexion_a_BBDD.Controllers
 {
-    public class RolController : Controller
+    public class OrdenController : Controller
     {
-        RolDatos rolesDatos = new RolDatos();
+        OrdenDatos OrdenDatos = new OrdenDatos();
 
-        [Authorize(Roles = "administrador, supervisor")]
+        [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
-            var oLista = rolesDatos.ListarRol();
+            var oLista = OrdenDatos.ListarOrden();
             return View(oLista);
         }
-        public IActionResult GuardarRol()
+        public IActionResult GuardarOrden()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult GuardarRol(Rol oRol)
+        public IActionResult GuardarOrden(Orden oOrden)
         {
-            var respuesta = rolesDatos.GuardarRol(oRol);
+            var respuesta = OrdenDatos.GuardarOrden(oOrden);
             if (respuesta)
             {
                 return RedirectToAction("Index");
@@ -32,15 +32,15 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EditarRol(int id)
+        public IActionResult EditarOrden(int id)
         {
-            var oRol = rolesDatos.ObtenerRol(id);
-            return View(oRol);
+            var oOrden = OrdenDatos.ObtenerOrden(id);
+            return View(oOrden);
         }
         [HttpPost]
-        public IActionResult EditarRol(Rol oRol)
+        public IActionResult EditarOrden(Orden oOrden)
         {
-            var respuesta = rolesDatos.EditarRol(oRol);
+            var respuesta = OrdenDatos.EditarOrden(oOrden);
             if (respuesta)
             {
                 return RedirectToAction("Index");
@@ -50,15 +50,15 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EliminarRol(int id)
+        public IActionResult EliminarOrden(int id)
         {
-            var oRol = rolesDatos.ObtenerRol(id);
-            return View(oRol);
+            var oOrden = OrdenDatos.ObtenerOrden(id);
+            return View(oOrden);
         }
         [HttpPost]
-        public IActionResult EliminarRol(Rol oRol)
+        public IActionResult EliminarOrden(Orden oOrden)
         {
-            var respuesta = rolesDatos.EliminarRol(oRol.id_rol);
+            var respuesta = OrdenDatos.EliminarOrden(oOrden.id_orden);
             if (respuesta)
             {
                 return RedirectToAction("Index");

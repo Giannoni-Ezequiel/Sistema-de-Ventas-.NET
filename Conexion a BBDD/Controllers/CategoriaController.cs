@@ -5,24 +5,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conexion_a_BBDD.Controllers
 {
-    public class RolController : Controller
+    public class CategoriaController : Controller
     {
-        RolDatos rolesDatos = new RolDatos();
+        CategoriaDatos categoriaDatos = new CategoriaDatos();
 
-        [Authorize(Roles = "administrador, supervisor")]
+        [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
-            var oLista = rolesDatos.ListarRol();
+            var oLista = categoriaDatos.ListarCategoria();
             return View(oLista);
         }
-        public IActionResult GuardarRol()
+        public IActionResult GuardarCategoria()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult GuardarRol(Rol oRol)
+        public IActionResult GuardarCategoria(Categoria oCategoria)
         {
-            var respuesta = rolesDatos.GuardarRol(oRol);
+            var respuesta = categoriaDatos.GuardarCategoria(oCategoria);
             if (respuesta)
             {
                 return RedirectToAction("Index");
@@ -32,15 +32,15 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EditarRol(int id)
+        public IActionResult EditarCategoria(int id)
         {
-            var oRol = rolesDatos.ObtenerRol(id);
-            return View(oRol);
+            var oCategoria = categoriaDatos.ObtenerCategoria(id);
+            return View(oCategoria);
         }
         [HttpPost]
-        public IActionResult EditarRol(Rol oRol)
+        public IActionResult EditarCategoria(Categoria oCategoria)
         {
-            var respuesta = rolesDatos.EditarRol(oRol);
+            var respuesta = categoriaDatos.EditarCategoria(oCategoria);
             if (respuesta)
             {
                 return RedirectToAction("Index");
@@ -50,15 +50,15 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EliminarRol(int id)
+        public IActionResult EliminarCategoria(int id)
         {
-            var oRol = rolesDatos.ObtenerRol(id);
-            return View(oRol);
+            var oCategoria = categoriaDatos.ObtenerCategoria(id);
+            return View(oCategoria);
         }
         [HttpPost]
-        public IActionResult EliminarRol(Rol oRol)
+        public IActionResult EliminarCategoria(Categoria oCategoria)
         {
-            var respuesta = rolesDatos.EliminarRol(oRol.id_rol);
+            var respuesta = categoriaDatos.EliminarCategoria(oCategoria.id_categoria);
             if (respuesta)
             {
                 return RedirectToAction("Index");

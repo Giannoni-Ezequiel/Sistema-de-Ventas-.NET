@@ -5,24 +5,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conexion_a_BBDD.Controllers
 {
-    public class RolController : Controller
+    public class UsuarioController : Controller
     {
-        RolDatos rolesDatos = new RolDatos();
+        UsuarioDatos UsuarioDatos = new UsuarioDatos();
 
-        [Authorize(Roles = "administrador, supervisor")]
+        [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
-            var oLista = rolesDatos.ListarRol();
+            var oLista = UsuarioDatos.ListarUsuarios();
             return View(oLista);
         }
-        public IActionResult GuardarRol()
+        public IActionResult GuardarUsuarios()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult GuardarRol(Rol oRol)
+        public IActionResult GuardarUsuarios(Usuario oUsuario)
         {
-            var respuesta = rolesDatos.GuardarRol(oRol);
+            var respuesta = UsuarioDatos.GuardarUsuario(oUsuario);
             if (respuesta)
             {
                 return RedirectToAction("Index");
@@ -32,15 +32,15 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EditarRol(int id)
+        public IActionResult EditarUsuarios(int id)
         {
-            var oRol = rolesDatos.ObtenerRol(id);
-            return View(oRol);
+            var oUsuario = UsuarioDatos.ObtenerUsuario(id);
+            return View(oUsuario);
         }
         [HttpPost]
-        public IActionResult EditarRol(Rol oRol)
+        public IActionResult EditarUsuario(Usuario oUsuario)
         {
-            var respuesta = rolesDatos.EditarRol(oRol);
+            var respuesta = UsuarioDatos.EditarUsuario(oUsuario);
             if (respuesta)
             {
                 return RedirectToAction("Index");
@@ -50,15 +50,15 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EliminarRol(int id)
+        public IActionResult EliminarUsuario(int id)
         {
-            var oRol = rolesDatos.ObtenerRol(id);
-            return View(oRol);
+            var oUsuario = UsuarioDatos.ObtenerUsuario(id);
+            return View(oUsuario);
         }
         [HttpPost]
-        public IActionResult EliminarRol(Rol oRol)
+        public IActionResult EliminarUsuario(Usuario oUsuario)
         {
-            var respuesta = rolesDatos.EliminarRol(oRol.id_rol);
+            var respuesta = UsuarioDatos.EliminarUsuario(oUsuario.id_usuario);
             if (respuesta)
             {
                 return RedirectToAction("Index");

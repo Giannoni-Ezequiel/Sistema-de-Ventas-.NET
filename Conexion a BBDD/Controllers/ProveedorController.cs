@@ -5,24 +5,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conexion_a_BBDD.Controllers
 {
-    public class RolController : Controller
+    public class ProveedorController : Controller
     {
-        RolDatos rolesDatos = new RolDatos();
+        ProveedorDatos ProveedorDatos = new ProveedorDatos();
 
-        [Authorize(Roles = "administrador, supervisor")]
+        [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
-            var oLista = rolesDatos.ListarRol();
+            var oLista = ProveedorDatos.ListarProveedor();
             return View(oLista);
         }
-        public IActionResult GuardarRol()
+        public IActionResult GuardarProveedor()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult GuardarRol(Rol oRol)
+        public IActionResult GuardarProveedor(Proveedor oProveedor)
         {
-            var respuesta = rolesDatos.GuardarRol(oRol);
+            var respuesta = ProveedorDatos.GuardarProveedor(oProveedor);
             if (respuesta)
             {
                 return RedirectToAction("Index");
@@ -32,15 +32,15 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EditarRol(int id)
+        public IActionResult EditarProveedor(int id)
         {
-            var oRol = rolesDatos.ObtenerRol(id);
-            return View(oRol);
+            var oProveedor = ProveedorDatos.ObtenerProveedor(id);
+            return View(oProveedor);
         }
         [HttpPost]
-        public IActionResult EditarRol(Rol oRol)
+        public IActionResult EditarProveedor(Proveedor oProveedor)
         {
-            var respuesta = rolesDatos.EditarRol(oRol);
+            var respuesta = ProveedorDatos.EditarProveedor(oProveedor);
             if (respuesta)
             {
                 return RedirectToAction("Index");
@@ -50,15 +50,15 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EliminarRol(int id)
+        public IActionResult EliminarProveedor(int id)
         {
-            var oRol = rolesDatos.ObtenerRol(id);
-            return View(oRol);
+            var oProveedor = ProveedorDatos.ObtenerProveedor(id);
+            return View(oProveedor);
         }
         [HttpPost]
-        public IActionResult EliminarRol(Rol oRol)
+        public IActionResult EliminarProveedor(Proveedor oProveedor)
         {
-            var respuesta = rolesDatos.EliminarRol(oRol.id_rol);
+            var respuesta = ProveedorDatos.EliminarProveedor(oProveedor.id_proveedor);
             if (respuesta)
             {
                 return RedirectToAction("Index");
