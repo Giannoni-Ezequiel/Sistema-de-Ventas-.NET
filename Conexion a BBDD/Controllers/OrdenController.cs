@@ -25,7 +25,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = OrdenDatos.GuardarOrden(oOrden);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarOrden");
             }
             else
             {
@@ -43,7 +43,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = OrdenDatos.EditarOrden(oOrden);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarOrden");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = OrdenDatos.EliminarOrden(oOrden.id_orden);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarOrden");
             }
             else
             {

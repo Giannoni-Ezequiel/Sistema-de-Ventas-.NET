@@ -3,7 +3,7 @@
     ViewData["Title"] = "ListarOrden";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!--
+
 <!DOCTYPE html>
 
 <html>
@@ -26,39 +26,41 @@
 							<br />
 						</div>
 						<div class="col-xs-6">
-							<a asp-action="GuardarEmpleado" asp-controller="Empleado" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Crear Empleado</span></a>
+							<a asp-action="GuardarOrden" asp-controller="Orden" class="btn btn-success"><i class="material-icons">&#xE145; </i> <span> Crear Orden</span></a>
 						</div>
 					</div>
 				</div>
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr>
-							<th>Id empleado</th>
-							<th>Nombre</th>
-							<th>Apellido</th>
-							<th>Id Supervisor</th>
-							<th>Id Usuario</th>
+							<th>Nº Orden</th>
+							<th>Cliente</th>
+							<th>Vendedor</th>
+							<th>Fecha de Generacion</th>
+							<th>Nº Cliente</th>
+							<th>Nº Empleado</th>
 							<th>Acción</th>
 						</tr>
-					</thead>-->
-					@*foreach (var item in Model)
+					</thead>
+					@foreach (var item in Model)
 					{
 						<tbody>
 							<tr>
-								<th>@item.id_empleado</th>
-								<th>@item.emple_nombre</th>
-								<th>@item.emple_apellido</th>
-								<th>@item.emple_id_supervisor</th>
-								<th>@item.emple_id_usuario</th>
+								<th>@item.id_orden</th>
+								<th>@item.ord_cliente</th>
+								<th>@item.ord_vendedor</th>
+								<th>@item.ord_fecha_de_generacion</th>
+								<th>@item.ord_id_cliente</th>
+								<th>@item.ord_id_empleado</th>
 								<td>
-									<a asp-action="EditarEmpleado" asp-controller="Empleado" class="edit" asp-route-id="@item.id_empleado">
+									<a asp-action="EditarOrden" asp-controller="Orden" class="edit" asp-route-id="@item.id_orden">
 										<i class="material-icons" data-toggle="tooltip" title="Edit">
 											<span class="material-symbols-outlined">
 												drive_file_rename_outline
 											</span>
 										</i>
 									</a>
-									<a asp-action="EliminarEmpleado" asp-controller="Empleado" class="bdanger" asp-route-id="@item.id_empleado">
+									<a asp-action="EliminarOrden" asp-controller="Orden" class="bdanger" asp-route-id="@item.id_orden">
 										<i class="material-icons" data-toggle="tooltip" title="Delete">
 											<span class="material-symbols-outlined">
 												delete
@@ -75,4 +77,4 @@
 	</div>
 </body>
 </html>
--->
+
