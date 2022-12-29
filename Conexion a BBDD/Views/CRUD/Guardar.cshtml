@@ -5,11 +5,15 @@
 
 }
 
-<div class="card">
-    <div class="card-header">
-        Nuevo Cliente
-    </div>
-    <div class="card-body">
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
         <form asp-action="Guardar" asp-controller="CRUD" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre</label>
@@ -46,5 +50,5 @@
             <button type="submit" class="btn btn-primary"> Guardar</button>
             <a asp-action="Listar" asp-controller="CRUD" class="btn btn-warning">Volver al listado</a>
          </form>
-    </div>
-</div>
+    </body>
+</html>

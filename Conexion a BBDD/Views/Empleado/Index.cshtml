@@ -23,7 +23,7 @@
 						<div class="row">
 							<div class="col-xs-6">
 								<br />
-								<h2>Manejar <b>Empleados</b></h2>
+								<h2>Gestionar <b>Empleado</b></h2>
 								<br />
 							</div>
 							<div class="col-xs-6">
@@ -52,16 +52,20 @@
 									<th>@item.emple_id_supervisor</th>
 									<th>@item.emple_id_usuario</th>
 									<td>
-									<a asp-action="EditarEmpleado" asp-controller="Empleado" class="edit" asp-route-id="@item.id_empleado"><i class="material-icons" data-toggle="tooltip" title="Edit"><span class="material-symbols-outlined">
-drive_file_rename_outline
-</span></i></a>
-									<a asp-action="EliminarEmpleado" asp-controller="Empleado" class="bdanger" asp-route-id="@item.id_empleado">
-										<i class="material-icons" data-toggle="tooltip" title="Delete">
-											<span class="material-symbols-outlined">
-												delete
-											</span>
-										</i>
-									</a>
+										<a asp-action="EditarEmpleado" asp-controller="Empleado" class="edit" asp-route-id="@item.id_empleado">
+											<i class="material-icons" data-toggle="tooltip" title="Edit">
+												<span class="material-symbols-outlined">
+													drive_file_rename_outline
+												</span>
+											</i>
+										</a>
+										<a asp-action="EliminarEmpleado" asp-controller="Empleado" class="bdanger" asp-route-id="@item.id_empleado">
+											<i class="material-icons" data-toggle="tooltip" title="Delete">
+												<span class="material-symbols-outlined">
+													delete
+												</span>
+											</i>
+										</a>
 									</td>
 								</tr>
 							</tbody>
