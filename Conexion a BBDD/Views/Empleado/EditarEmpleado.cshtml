@@ -13,7 +13,9 @@
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body>
-        <h1>Editar Empleado @Html.DisplayTextFor(m => m.emple_nombre)</h1>
+        <br />
+        <h2>Editar Empleado @Html.DisplayTextFor(m => m.emple_nombre)</h2>
+        <br />
         <form asp-action="EditarEmpleado" asp-controller="Empleado" method="post">
             <div class="form-group">
                 <input asp-for="id_empleado" type="text" class="form-control" />
@@ -35,6 +37,7 @@
                 </div>
                 <br />
                 <button type="submit" class="btn btn-primary">Editar</button>
+                <a asp-action="Index" asp-controller="Empleado" class="btn btn-warning">Volver al listado</a>
             </div>
         </form>
     </body>

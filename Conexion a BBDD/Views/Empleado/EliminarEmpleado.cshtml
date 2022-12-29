@@ -13,12 +13,14 @@
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body>
-        <h2>Eliminar @Html.DisplayTextFor(m => m.emple_nombre)</h2>
-
+        <br />
+        <h2>Eliminar Empleado @Html.DisplayTextFor(m => m.emple_nombre)</h2>
+        <br />
         <form asp-action="EliminarEmpleado" asp-controller="Empleado" method="post">
             <input asp-for="id_empleado" type="hidden" class="form-control" />
-            <p>Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.emple_nombre)?</p>
-            <button type="submit" class="btn-danger">
+            <p>¿Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.emple_nombre)?</p>
+            <br />
+            <button type="submit" class="btn btn-danger">
                 Eliminar
             </button>
             <a asp-action="Index" asp-controller="Empleado" class="btn btn-warning">

@@ -13,8 +13,10 @@
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body>
-    <h1>Guardar Detalle_orden funciona</h1>
-    <form asp-action="GuardarDetalle_orden" asp-controller="Detalle_orden" method="post">
+        <br />
+        <h2>Guardar Detalle_orden</h2>
+        <br />
+        <form asp-action="GuardarDetalle_orden" asp-controller="Detalle_orden" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Precio</label>
             <input asp-for="det_ord_precio" type="text" class="form-control">
@@ -27,7 +29,9 @@
             <label for="exampleInputPassword1">ID Producto</label>
             <input asp-for="id_producto" type="text" class="form-control">
             </div>
-            <button name="submit" type="submit" id="guardar-submit" data-submit="...Sending">Submit</button>
+            <br />
+            <button type="submit" class="btn btn-primary"> Guardar</button>
+            <a asp-action="Index" asp-controller="Empleado" class="btn btn-warning">Volver al listado</a>
         </form>
     </body>
 </html>

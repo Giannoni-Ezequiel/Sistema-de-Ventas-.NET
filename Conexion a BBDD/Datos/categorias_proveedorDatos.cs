@@ -42,7 +42,7 @@ namespace Conexion_a_BBDD.Datos
         public categorias_proveedor Obtenercategorias_proveedor(int id)
         {
             var ocategorias_proveedor = new categorias_proveedor();
-            bool respuesta;
+            
             try
             {
                 var conexion = new Conexion();
@@ -67,8 +67,7 @@ namespace Conexion_a_BBDD.Datos
             }
             catch (Exception e)
             {
-                string error = e.Message;
-                respuesta = false;
+                //Handle exception
             }
             return ocategorias_proveedor;
         }
