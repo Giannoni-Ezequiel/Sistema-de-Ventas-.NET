@@ -1,8 +1,49 @@
-﻿
+﻿@model Promocion_producto
 @{
     ViewData["Title"] = "EditarPromocion_producto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EditarPromocion_producto</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+    <h2>Editar Promocion_producto @Html.DisplayTextFor(m => m.promo_fecha_inicio)<br />@Html.DisplayTextFor(m => m.promo_fecha_fin)</h2>
+        <br />
+        <form asp-action="EditarPromocion_producto" asp-controller="Promocion_producto" method="post">
+            <div class="form-group">
+                    <input asp-for="id_producto" type="text" class="form-control" />
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nº Promocion</label>
+                    <input asp-for="id_promo" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Nº Producto</label>
+                    <input asp-for="id_producto" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Nº Promocion_producto</label>
+                    <input asp-for="promo_numero" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Fecha Inicio</label>
+                    <input asp-for="promo_fecha_inicio" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Fecha Fin</label>
+                    <input asp-for="promo_fecha_fin" type="text" class="form-control">
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <a asp-action="ListarPromocion_producto" asp-controller="Promocion_producto" class="btn btn-warning">Volver al listado</a>
+            </div>
+        </form>
+    </body>
+</html>
 

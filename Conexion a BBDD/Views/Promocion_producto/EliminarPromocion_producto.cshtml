@@ -1,8 +1,32 @@
-﻿
+﻿@model Promocion_producto
 @{
     ViewData["Title"] = "EliminarPromocion_producto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EliminarPromocion_producto</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+    <h2>Eliminar Promocion_producto @Html.DisplayTextFor(m => m.promo_fecha_inicio)<br />@Html.DisplayTextFor(m => m.promo_fecha_fin)</h2>
+        <br />
+        <form asp-action="EliminarPromocion_producto" asp-controller="Promocion_producto" method="post">
+            <input asp-for="promo_numero" type="hidden" class="form-control" />
+            <p>¿Seguro que quieres eliminar el registro?</p>
+            <br />
+            <button type="submit" class="btn btn-danger">
+                Eliminar
+            </button>
+            <a asp-action="ListarPromocion_producto" asp-controller="Promocion_producto" class="btn btn-warning">
+                Volver al listado
+            </a>
+        </form>
+    </body>
+</html>
 
