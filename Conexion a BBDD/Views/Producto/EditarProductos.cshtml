@@ -1,8 +1,53 @@
-﻿
+﻿@model Producto
 @{
     ViewData["Title"] = "EditarProductos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EditarProductos</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+        <h2>Editar Producto @Html.DisplayTextFor(m => m.prod_nombre)</h2>
+        <br />
+        <form asp-action="EditarProductos" asp-controller="Producto" method="post">
+                <div class="form-group">
+                    <input asp-for="id_producto" type="text" class="form-control" />
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nombre</label>
+                    <input asp-for="prod_nombre" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Precio</label>
+                    <input asp-for="prod_precio" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Stock</label>
+                    <input asp-for="prod_stock" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Detalle</label>
+                    <input asp-for="prod_detalle" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">IMG</label>
+                    <input asp-for="prod_img" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Nº Proveedor</label>
+                    <input asp-for="prod_proveedor" type="text" class="form-control">
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <a asp-action="ListarProducto" asp-controller="Producto" class="btn btn-warning">Volver al listado</a>
+                 </div>
+        </form>
+    </body>
+</html>
 

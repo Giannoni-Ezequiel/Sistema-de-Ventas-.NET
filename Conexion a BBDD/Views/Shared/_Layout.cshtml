@@ -75,6 +75,9 @@
                                         <a class="nav-link text-dark" asp-area="" asp-controller="categorias_proveedor" asp-action="Listarcategorias_proveedor">Categoria/Proveedor</a>
                                     </div>
                                 </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Producto" asp-action="ListarProducto">Productos</a>
+                                </li>
                             }
                             @if (User.IsInRole("cliente"))
                                 {

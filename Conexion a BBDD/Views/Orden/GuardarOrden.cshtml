@@ -7,40 +7,40 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-</head>
-<body>
-    <br />
-    <h2>Guardar Orden</h2>
-    <br />
-    <form asp-action="GuardarOrden" asp-controller="Orden" method="post">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Nº Cliente</label>
-            <input asp-for="ord_cliente" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Nº Vendedor</label>
-            <input asp-for="ord_vendedor" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Fecha de Generacion</label>
-            <input asp-for="ord_fecha_de_generacion" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Nº Cliente</label>
-            <input asp-for="ord_id_cliente" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Nº Empleado</label>
-            <input asp-for="ord_id_empleado" type="text" class="form-control">
-        </div>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
         <br />
-        <button type="submit" class="btn btn-primary"> Guardar</button>
-        <a asp-action="ListarOrden" asp-controller="Orden" class="btn btn-warning">Volver al listado</a>
-    </form>
-</body>
+        <h2>Guardar Orden</h2>
+        <br />
+        <form asp-action="GuardarOrden" asp-controller="Orden" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nº Cliente</label>
+                <input asp-for="ord_cliente" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Nº Vendedor</label>
+                <input asp-for="ord_vendedor" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Fecha de Generacion</label>
+                <input asp-for="ord_fecha_de_generacion" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Nº Cliente</label>
+                <input asp-for="ord_id_cliente" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Nº Empleado</label>
+                <input asp-for="ord_id_empleado" type="text" class="form-control">
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary"> Guardar</button>
+            <a asp-action="ListarOrden" asp-controller="Orden" class="btn btn-warning">Volver al listado</a>
+        </form>
+    </body>
 </html>
 

@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Producto>
 @{
     ViewData["Title"] = "VisualizarProductos";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,10 +22,6 @@
 							<div class="col-xs-6">
 								<h2>Productos</h2>
 							</div>
-							@*<div class="col-xs-6">
-							<a asp-action="GuardarProducto" asp-controller="Producto" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Crear Producto</span></a>
-
-							</div>*@
 						</div>
 					</div>
 					<table class="table table-striped table-hover">
@@ -47,11 +43,6 @@
 									<th>@item.prod_stock</th>
 									<th>@item.prod_detalle</th>
 									<th>@item.prod_img</th>
-									@*  <td>
-								<a asp-action="EditarProducto" asp-controller="Producto" class="edit" asp-route-id="@item.id_producto"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-
-								<a asp-action="EliminarProducto" asp-controller="Producto" class="bdanger" asp-route-id="@item.id_producto"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-								</td>*@
 								</tr>
 							</tbody>
 						}
