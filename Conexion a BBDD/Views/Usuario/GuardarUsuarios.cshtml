@@ -1,8 +1,42 @@
-﻿
+﻿@model Usuario
 @{
     ViewData["Title"] = "GuardarUsuarios";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>GuardarUsuarios</h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <br />
+    <h2>Guardar Usuario</h2>
+    <br />
+    <form asp-action="GuardarUsuarios" asp-controller="Usuario" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Detalle</label>
+            <input asp-for="usua_nombre" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Detalle</label>
+            <input asp-for="usua_correo" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Detalle</label>
+            <input asp-for="usua_pass" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Detalle</label>
+            <input asp-for="id_Rol" type="text" class="form-control">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary"> Guardar</button>
+        <a asp-action="ListarUsuario" asp-controller="Usuario" class="btn btn-warning">Volver al listado</a>
+    </form>
+</body>
+</html>
 

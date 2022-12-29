@@ -1,8 +1,32 @@
-﻿
+﻿@model Usuario
 @{
     ViewData["Title"] = "EliminarUsuario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EliminarUsuario</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+        <h2>Eliminar Usuario < @Html.DisplayTextFor(m => m.usua_correo) > </h2>
+        <br />
+        <form asp-action="EliminarUsuario" asp-controller="Usuario" method="post">
+            <input asp-for="id_usuario" type="hidden" class="form-control" />
+            <p>¿Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.usua_correo)?</p>
+            <br />
+            <button type="submit" class="btn btn-danger">
+                Eliminar
+            </button>
+            <a asp-action="ListarUsuario" asp-controller="Usuario" class="btn btn-warning">
+                Volver al listado
+            </a>
+        </form>
+    </body>
+</html>
 

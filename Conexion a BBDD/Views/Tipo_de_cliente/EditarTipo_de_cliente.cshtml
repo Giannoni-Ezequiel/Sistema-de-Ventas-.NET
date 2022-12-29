@@ -7,30 +7,30 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-</head>
-<body>
-    <br />
-    <h2>Editar Tipo de cliente < @Html.DisplayTextFor(m => m.clie_tipo_descripcion) > </h2>
-    <br />
-    <form asp-action="EditarTipo_de_cliente" asp-controller="Tipo_de_cliente" method="post">
-        <div class="form-group">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+        <h2>Editar Tipo de cliente < @Html.DisplayTextFor(m => m.clie_tipo_descripcion) > </h2>
+        <br />
+        <form asp-action="EditarTipo_de_cliente" asp-controller="Tipo_de_cliente" method="post">
             <div class="form-group">
-                <label for="exampleInputEmail1">Nº Rol</label>
-                <input asp-for="id_tipo_cliente" type="text" class="form-control">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nº Rol</label>
+                    <input asp-for="id_tipo_cliente" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Detalle</label>
+                    <input asp-for="clie_tipo_descripcion" type="text" class="form-control">
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <a asp-action="ListarTipo_de_cliente" asp-controller="Tipo_de_cliente" class="btn btn-warning">Volver al listado</a>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Detalle</label>
-                <input asp-for="clie_tipo_descripcion" type="text" class="form-control">
-            </div>
-            <br />
-            <button type="submit" class="btn btn-primary">Editar</button>
-            <a asp-action="ListarTipo_de_cliente" asp-controller="Tipo_de_cliente" class="btn btn-warning">Volver al listado</a>
-        </div>
-    </form>
-</body>
+        </form>
+    </body>
 </html>
 

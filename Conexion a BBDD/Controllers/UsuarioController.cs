@@ -32,7 +32,7 @@ namespace Conexion_a_BBDD.Controllers
                 return View();
             }
         }
-        public IActionResult EditarUsuarios(int id)
+        public IActionResult EditarUsuario(int id)
         {
             var oUsuario = UsuarioDatos.ObtenerUsuario(id);
             return View(oUsuario);
