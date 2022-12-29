@@ -1,8 +1,32 @@
-﻿
+﻿@model Proveedor
 @{
     ViewData["Title"] = "EliminarProveedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EliminarProveedor</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+        <h2>Eliminar Proveedor @Html.DisplayTextFor(m => m.provee_nombre)</h2>
+        <br />
+        <form asp-action="EliminarProveedor" asp-controller="Proveedor" method="post">
+            <input asp-for="id_proveedor" type="hidden" class="form-control" />
+            <p>¿Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.provee_nombre)?</p>
+            <br />
+            <button type="submit" class="btn btn-danger">
+                Eliminar
+            </button>
+            <a asp-action="ListarProveedor" asp-controller="Proveedor" class="btn btn-warning">
+                Volver al listado
+            </a>
+        </form>
+    </body>
+</html>
 

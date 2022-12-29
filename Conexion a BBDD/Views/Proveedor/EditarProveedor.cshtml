@@ -1,8 +1,49 @@
-﻿
+﻿@model Proveedor
 @{
     ViewData["Title"] = "EditarProveedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EditarProveedor</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+        <h2>Editar Proveedor @Html.DisplayTextFor(m => m.provee_nombre)</h2>
+        <br />
+        <form asp-action="EditarProveedor" asp-controller="Proveedor" method="post">
+            <div class="form-group">
+                <input asp-for="id_proveedor" type="text" class="form-control" />
+                <div class="form-group">
+                <label for="exampleInputEmail1">Nº Proveedor</label>
+                    <input asp-for="id_proveedor" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Nombre</label>
+                    <input asp-for="provee_nombre" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Apellido</label>
+                    <input asp-for="provee_apellido" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Direccion</label>
+                    <input asp-for="provee_direccion" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">CUIT</label>
+                    <input asp-for="provee_cuit" type="text" class="form-control">
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <a asp-action="ListarProveedor" asp-controller="Proveedor" class="btn btn-warning">Volver al listado</a>
+            </div>
+        </form>
+    </body>
+</html>
 

@@ -7,26 +7,26 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-</head>
-<body>
-    <br />
-    <h2>Eliminar Promocion @Html.DisplayTextFor(m => m.promo_nombre)</h2>
-    <br />
-    <form asp-action="EliminarPromociones" asp-controller="Promociones" method="post">
-        <input asp-for="id_promo" type="hidden" class="form-control" />
-        <p>¿Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.promo_nombre)?</p>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
         <br />
-        <button type="submit" class="btn btn-danger">
-            Eliminar
-        </button>
-        <a asp-action="ListarPromociones" asp-controller="Promociones" class="btn btn-warning">
-            Volver al listado
-        </a>
-    </form>
-</body>
+        <h2>Eliminar Promocion @Html.DisplayTextFor(m => m.promo_nombre)</h2>
+        <br />
+        <form asp-action="EliminarPromociones" asp-controller="Promociones" method="post">
+            <input asp-for="id_promo" type="hidden" class="form-control" />
+            <p>¿Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.promo_nombre)?</p>
+            <br />
+            <button type="submit" class="btn btn-danger">
+                Eliminar
+            </button>
+            <a asp-action="ListarPromociones" asp-controller="Promociones" class="btn btn-warning">
+                Volver al listado
+            </a>
+        </form>
+    </body>
 </html>
 
