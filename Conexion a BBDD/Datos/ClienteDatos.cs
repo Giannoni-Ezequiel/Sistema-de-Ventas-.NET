@@ -127,13 +127,13 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd=new SqlCommand("EditarClientes", conexionTemp);
                     cmd.Parameters.AddWithValue("id_cliente", objetoCliente.id_cliente);
-                    cmd.Parameters.AddWithValue("clie_nombre", objetoCliente.clie_nombre);
-                    cmd.Parameters.AddWithValue("clie_apellido", objetoCliente.clie_apellido);
-                    cmd.Parameters.AddWithValue("clie_dni", objetoCliente.clie_dni);
-                    cmd.Parameters.AddWithValue("clie_cuit", objetoCliente.clie_cuit);
-                    cmd.Parameters.AddWithValue("clie_razon_social", objetoCliente.clie_razon_social);
-                    cmd.Parameters.AddWithValue("clie_tipo", objetoCliente.clie_tipo);
-                    cmd.Parameters.AddWithValue("clie_id_usuario", objetoCliente.clie_id_usuario);
+                    cmd.Parameters.AddWithValue("nombre", objetoCliente.clie_nombre);
+                    cmd.Parameters.AddWithValue("apellido", objetoCliente.clie_apellido);
+                    cmd.Parameters.AddWithValue("dni", objetoCliente.clie_dni);
+                    cmd.Parameters.AddWithValue("cuit", objetoCliente.clie_cuit);
+                    cmd.Parameters.AddWithValue("razon_social", objetoCliente.clie_razon_social);
+                    cmd.Parameters.AddWithValue("tipo", objetoCliente.clie_tipo);
+                    cmd.Parameters.AddWithValue("id_usuario", objetoCliente.clie_id_usuario);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

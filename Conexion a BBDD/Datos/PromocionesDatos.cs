@@ -70,7 +70,7 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarPromociones", conexionTemp);
-                    cmd.Parameters.AddWithValue("promo_nombre", oPromociones.promo_nombre);
+                    cmd.Parameters.AddWithValue("nombre", oPromociones.promo_nombre);
                     cmd.Parameters.AddWithValue("descuento", oPromociones.descuento);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
@@ -95,7 +95,7 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("EditarPromociones", conexionTemp);
                     cmd.Parameters.AddWithValue("id_promo", oPromociones.id_promo);
-                    cmd.Parameters.AddWithValue("promo_nombre", oPromociones.promo_nombre);
+                    cmd.Parameters.AddWithValue("nombre", oPromociones.promo_nombre);
                     cmd.Parameters.AddWithValue("descuento", oPromociones.descuento);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

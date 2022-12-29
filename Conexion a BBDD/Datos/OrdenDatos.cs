@@ -83,11 +83,11 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarOrden", conexionTemp);
-                    cmd.Parameters.AddWithValue("ord_cliente", objetoOrden.ord_cliente);
-                    cmd.Parameters.AddWithValue("ord_vendedor", objetoOrden.ord_vendedor);
-                    cmd.Parameters.AddWithValue("ord_fecha_de_generacion", objetoOrden.ord_fecha_de_generacion);
-                    cmd.Parameters.AddWithValue("ord_id_cliente", objetoOrden.ord_id_cliente);
-                    cmd.Parameters.AddWithValue("ord_id_empleado", objetoOrden.ord_id_empleado);
+                    cmd.Parameters.AddWithValue("cliente", objetoOrden.ord_cliente);
+                    cmd.Parameters.AddWithValue("vendedor", objetoOrden.ord_vendedor);
+                    cmd.Parameters.AddWithValue("fecha_de_generacion", objetoOrden.ord_fecha_de_generacion);
+                    cmd.Parameters.AddWithValue("id_cliente", objetoOrden.ord_id_cliente);
+                    cmd.Parameters.AddWithValue("id_empleado", objetoOrden.ord_id_empleado);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -111,11 +111,11 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("EditarOrden", conexionTemp);
                     cmd.Parameters.AddWithValue("id_orden", objetoOrden.id_orden);
-                    cmd.Parameters.AddWithValue("ord_cliente", objetoOrden.ord_cliente);
-                    cmd.Parameters.AddWithValue("ord_vendedor", objetoOrden.ord_vendedor);
-                    cmd.Parameters.AddWithValue("ord_fecha_de_generacion", objetoOrden.ord_fecha_de_generacion);
-                    cmd.Parameters.AddWithValue("ord_id_cliente", objetoOrden.ord_id_cliente);
-                    cmd.Parameters.AddWithValue("ord_id_empleado", objetoOrden.ord_id_empleado);
+                    cmd.Parameters.AddWithValue("cliente", objetoOrden.ord_cliente);
+                    cmd.Parameters.AddWithValue("vendedor", objetoOrden.ord_vendedor);
+                    cmd.Parameters.AddWithValue("fecha_de_generacion", objetoOrden.ord_fecha_de_generacion);
+                    cmd.Parameters.AddWithValue("id_cliente", objetoOrden.ord_id_cliente);
+                    cmd.Parameters.AddWithValue("id_empleado", objetoOrden.ord_id_empleado);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

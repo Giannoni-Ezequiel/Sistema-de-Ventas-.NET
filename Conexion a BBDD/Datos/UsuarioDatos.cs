@@ -43,6 +43,7 @@ namespace Conexion_a_BBDD.Datos
                         //Añadiendo por cada vuelta un registro
                         oLista.Add(new Usuario()
                         {
+                            id_usuario = Convert.ToInt32(lector.GetValue("id_usuario")),
                             usua_nombre = Convert.ToString(lector["usua_nombre"]),
                             usua_pass = Convert.ToString(lector["usua_pass"]),
                             usua_correo = Convert.ToString(lector["usua_correo"]),
@@ -141,10 +142,10 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarUsuario", conexionTemp);
 
-                    cmd.Parameters.AddWithValue("Nombre", oUsuario.usua_nombre);
-                    cmd.Parameters.AddWithValue("Correo", oUsuario.usua_correo);
-                    cmd.Parameters.AddWithValue("Clave", oUsuario.usua_pass);
-                    cmd.Parameters.AddWithValue("usuario_rol", oUsuario.id_Rol);
+                    cmd.Parameters.AddWithValue("nombre", oUsuario.usua_nombre);
+                    cmd.Parameters.AddWithValue("correo", oUsuario.usua_correo);
+                    cmd.Parameters.AddWithValue("pass", oUsuario.usua_pass);
+                    cmd.Parameters.AddWithValue("id_rol", oUsuario.id_Rol);
 
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -172,10 +173,10 @@ namespace Conexion_a_BBDD.Datos
                     SqlCommand cmd = new SqlCommand("EditarUsuario", conexionTemp);
 
                     cmd.Parameters.AddWithValue("id_usuario", oUsuario.id_usuario);
-                    cmd.Parameters.AddWithValue("Nombre", oUsuario.usua_nombre);
-                    cmd.Parameters.AddWithValue("Correo", oUsuario.usua_correo);
-                    cmd.Parameters.AddWithValue("Clave", oUsuario.usua_pass);
-                    cmd.Parameters.AddWithValue("usuario_rol", oUsuario.id_Rol);
+                    cmd.Parameters.AddWithValue("nombre", oUsuario.usua_nombre);
+                    cmd.Parameters.AddWithValue("correo", oUsuario.usua_correo);
+                    cmd.Parameters.AddWithValue("pass", oUsuario.usua_pass);
+                    cmd.Parameters.AddWithValue("id_Rol", oUsuario.id_Rol);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

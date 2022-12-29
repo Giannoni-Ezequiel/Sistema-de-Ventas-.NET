@@ -78,10 +78,10 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarProveedor", conexionTemp);
 
-                    cmd.Parameters.AddWithValue("provee_nombre", oProveedor.provee_nombre);
-                    cmd.Parameters.AddWithValue("provee_apellido", oProveedor.provee_apellido);
-                    cmd.Parameters.AddWithValue("provee_direccion", oProveedor.provee_direccion);
-                    cmd.Parameters.AddWithValue("provee_cuit", oProveedor.provee_cuit);
+                    cmd.Parameters.AddWithValue("nombre", oProveedor.provee_nombre);
+                    cmd.Parameters.AddWithValue("apellido", oProveedor.provee_apellido);
+                    cmd.Parameters.AddWithValue("direccion", oProveedor.provee_direccion);
+                    cmd.Parameters.AddWithValue("cuit", oProveedor.provee_cuit);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -105,10 +105,10 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("EditarProveedor", conexionTemp);
                     cmd.Parameters.AddWithValue("id_proveedor", oProveedor.id_proveedor);
-                    cmd.Parameters.AddWithValue("provee_nombre", oProveedor.provee_nombre);
-                    cmd.Parameters.AddWithValue("provee_apellido", oProveedor.provee_apellido);
-                    cmd.Parameters.AddWithValue("provee_direccion", oProveedor.provee_direccion);
-                    cmd.Parameters.AddWithValue("provee_cuit", oProveedor.provee_cuit);
+                    cmd.Parameters.AddWithValue("nombre", oProveedor.provee_nombre);
+                    cmd.Parameters.AddWithValue("apellido", oProveedor.provee_apellido);
+                    cmd.Parameters.AddWithValue("direccion", oProveedor.provee_direccion);
+                    cmd.Parameters.AddWithValue("cuit", oProveedor.provee_cuit);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
