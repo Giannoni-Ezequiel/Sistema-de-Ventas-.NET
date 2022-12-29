@@ -18,7 +18,7 @@
         <br />
         <form asp-action="EditarProductos" asp-controller="Producto" method="post">
                 <div class="form-group">
-                    <input asp-for="id_producto" type="text" class="form-control" />
+                <input asp-for="id_producto" type="hidden" class="form-control" />
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nombre</label>
                     <input asp-for="prod_nombre" type="text" class="form-control">
@@ -46,7 +46,7 @@
                 <br />
                 <button type="submit" class="btn btn-primary">Editar</button>
                 <a asp-action="ListarProducto" asp-controller="Producto" class="btn btn-warning">Volver al listado</a>
-                 </div>
+                </div>
         </form>
     </body>
 </html>

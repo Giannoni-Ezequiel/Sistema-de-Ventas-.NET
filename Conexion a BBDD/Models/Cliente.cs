@@ -18,7 +18,7 @@ namespace Conexion_a_BBDD.Models
 
         public string? clie_razon_social { get; set; }
 
-        public string? clie_tipo { get; set; }
+        public int? clie_tipo { get; set; }
 
 
         [ForeignKey("Usuario")]

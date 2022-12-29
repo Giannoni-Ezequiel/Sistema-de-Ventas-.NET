@@ -27,7 +27,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = Promocion_productoDatos.GuardarPromocion_producto(oPromocion_producto);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarPromocion_producto");
             }
             else
             {
@@ -45,7 +45,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = Promocion_productoDatos.EditarPromocion_producto(oPromocion_producto);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarPromocion_producto");
             }
             else
             {
@@ -73,7 +73,7 @@ namespace Conexion_a_BBDD.Controllers
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarPromocion_producto");
             }
             catch (Exception e)
             {

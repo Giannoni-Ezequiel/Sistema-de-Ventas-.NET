@@ -94,10 +94,10 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarEmpleado", conexionTemp);
 
-                    cmd.Parameters.AddWithValue("emple_nombre", oEmpleado.emple_nombre);
-                    cmd.Parameters.AddWithValue("emple_apellido", oEmpleado.emple_apellido);
-                    cmd.Parameters.AddWithValue("emple_id_supervisor", oEmpleado.emple_id_supervisor);
-                    cmd.Parameters.AddWithValue("emple_id_usuario", oEmpleado.emple_id_usuario);
+                    cmd.Parameters.AddWithValue("nombre", oEmpleado.emple_nombre);
+                    cmd.Parameters.AddWithValue("apellido", oEmpleado.emple_apellido);
+                    cmd.Parameters.AddWithValue("id_supervisor", oEmpleado.emple_id_supervisor);
+                    cmd.Parameters.AddWithValue("id_usuario", oEmpleado.emple_id_usuario);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

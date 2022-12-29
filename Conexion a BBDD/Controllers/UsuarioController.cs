@@ -25,7 +25,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = UsuarioDatos.GuardarUsuario(oUsuario);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarUsuario");
             }
             else
             {
@@ -43,7 +43,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = UsuarioDatos.EditarUsuario(oUsuario);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarUsuario");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = UsuarioDatos.EliminarUsuario(oUsuario.id_usuario);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarUsuario");
             }
             else
             {

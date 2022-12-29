@@ -25,7 +25,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = PromocionesDatos.GuardarPromociones(oPromociones);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarPromociones");
             }
             else
             {
@@ -43,7 +43,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = PromocionesDatos.EditarPromociones(oPromociones);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarPromociones");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = PromocionesDatos.EliminarPromociones(oPromociones.id_promo);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarPromociones");
             }
             else
             {

@@ -25,7 +25,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = Tipo_de_clienteDatos.GuardarTipo_De_Cliente(oTipo_de_cliente);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarTipo_de_cliente");
             }
             else
             {
@@ -43,7 +43,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = Tipo_de_clienteDatos.EditarTipo_De_Cliente(oTipo_de_cliente);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarTipo_de_cliente");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = Tipo_de_clienteDatos.EliminarTipo_De_Cliente(oTipo_de_cliente.id_tipo_cliente);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarTipo_de_cliente");
             }
             else
             {

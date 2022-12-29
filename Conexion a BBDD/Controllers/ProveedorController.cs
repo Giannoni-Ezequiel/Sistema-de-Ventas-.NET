@@ -25,7 +25,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = ProveedorDatos.GuardarProveedor(oProveedor);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarProveedor");
             }
             else
             {
@@ -43,7 +43,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = ProveedorDatos.EditarProveedor(oProveedor);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarProveedor");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = ProveedorDatos.EliminarProveedor(oProveedor.id_proveedor);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarProveedor");
             }
             else
             {

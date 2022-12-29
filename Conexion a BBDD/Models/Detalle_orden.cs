@@ -5,7 +5,7 @@ namespace Conexion_a_BBDD.Models
 {
     public class Detalle_orden
     {
-        [Key]
+        [ForeignKey("Orden")]
         public int id_orden { get; set; }
         [Key]
         public int id_detalle_orden { get; set; }

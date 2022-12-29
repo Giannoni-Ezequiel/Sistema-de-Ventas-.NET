@@ -25,7 +25,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = rolesDatos.GuardarRol(oRol);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarRol");
             }
             else
             {
@@ -43,7 +43,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = rolesDatos.EditarRol(oRol);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarRol");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = rolesDatos.EliminarRol(oRol.id_rol);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarRol");
             }
             else
             {

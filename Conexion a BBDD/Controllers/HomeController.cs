@@ -20,7 +20,7 @@ namespace Conexion_a_BBDD.Controllers
             return View();
         }
 
-        [Authorize(Roles = "SuperAdmin")]
+        [Authorize(Roles = "admin")]
         public IActionResult Privacy()
         {
             return View();

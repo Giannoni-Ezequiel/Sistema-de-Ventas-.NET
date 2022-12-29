@@ -31,7 +31,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = ProductoDatos.GuardarProductos(oProducto);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarProducto");
             }
             else
             {
@@ -49,7 +49,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = ProductoDatos.EditarProductos(oProducto);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarProducto");
             }
             else
             {
@@ -67,7 +67,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = ProductoDatos.EliminarProductos(oProducto.id_producto);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarProducto");
             }
             else
             {

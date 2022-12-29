@@ -27,7 +27,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = categorias_proveedorDatos.Guardarcategorias_proveedor(ocategorias_proveedor);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Listarcategorias_proveedor");
             }
             else
             {
@@ -45,7 +45,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = categorias_proveedorDatos.Editarcategorias_proveedor(ocategorias_proveedor);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Listarcategorias_proveedor");
             }
             else
             {
@@ -58,7 +58,7 @@ namespace Conexion_a_BBDD.Controllers
             return View(ocategorias_proveedor);
         }
         [HttpPost]
-        public ActionResult Eliminarcategorias_proveedor(int id_proveedor, int id_categoria)
+        public IActionResult Eliminarcategorias_proveedor(int id_proveedor, int id_categoria)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace Conexion_a_BBDD.Controllers
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Listarcategorias_proveedor");
             }
             catch (Exception e)
             {

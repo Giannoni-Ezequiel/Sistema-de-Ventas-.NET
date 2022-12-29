@@ -26,7 +26,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = Detalle_ordenDatos.GuardarDetalle_orden(oDetalle_orden);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarDetalle_orden");
             }
             else
             {
@@ -44,7 +44,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = Detalle_ordenDatos.EditarDetalle_orden(oDetalle_orden);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarDetalle_orden");
             }
             else
             {
@@ -71,7 +71,7 @@ namespace Conexion_a_BBDD.Controllers
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarDetalle_orden");
             }
             catch (Exception e)
             {

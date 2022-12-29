@@ -41,7 +41,7 @@ namespace Conexion_a_BBDD.Datos
                             clie_dni = Convert.ToString(lector["clie_dni"]),
                             clie_cuit = Convert.ToString(lector["clie_cuit"]),
                             clie_razon_social = Convert.ToString(lector["clie_razon_social"]),
-                            clie_tipo = Convert.ToString(lector["clie_tipo"]),
+                            clie_tipo = Convert.ToInt32(lector["clie_tipo"]),
                             clie_id_usuario = Convert.ToInt32(lector["clie_id_usuario"])
                         }); 
                     }//Aca ya no existe la variable lector, se destruyo
@@ -72,7 +72,7 @@ namespace Conexion_a_BBDD.Datos
                             objetoCliente.clie_dni = Convert.ToString(lector["clie_dni"]);
                             objetoCliente.clie_cuit = Convert.ToString(lector["clie_cuit"]);
                             objetoCliente.clie_razon_social = Convert.ToString(lector["clie_razon_social"]);
-                            objetoCliente.clie_tipo = Convert.ToString(lector["clie_tipo"]);
+                            objetoCliente.clie_tipo = Convert.ToInt32(lector["clie_tipo"]);
                             objetoCliente.clie_id_usuario = Convert.ToInt32(lector["clie_id_usuario"]);
 
                         }
@@ -96,13 +96,13 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarClientes", conexionTemp);
-                    cmd.Parameters.AddWithValue("clie_nombre", objetoCliente.clie_nombre);
-                    cmd.Parameters.AddWithValue("clie_apellido", objetoCliente.clie_apellido);
-                    cmd.Parameters.AddWithValue("clie_dni", objetoCliente.clie_dni);
-                    cmd.Parameters.AddWithValue("clie_cuit", objetoCliente.clie_cuit);
-                    cmd.Parameters.AddWithValue("clie_razon_social", objetoCliente.clie_razon_social);
-                    cmd.Parameters.AddWithValue("clie_tipo", objetoCliente.clie_tipo);
-                    cmd.Parameters.AddWithValue("clie_id_usuario", objetoCliente.clie_id_usuario);
+                    cmd.Parameters.AddWithValue("nombre", objetoCliente.clie_nombre);
+                    cmd.Parameters.AddWithValue("apellido", objetoCliente.clie_apellido);
+                    cmd.Parameters.AddWithValue("dni", objetoCliente.clie_dni);
+                    cmd.Parameters.AddWithValue("cuit", objetoCliente.clie_cuit);
+                    cmd.Parameters.AddWithValue("razon_social", objetoCliente.clie_razon_social);
+                    cmd.Parameters.AddWithValue("tipo", objetoCliente.clie_tipo);
+                    cmd.Parameters.AddWithValue("id_usuario", objetoCliente.clie_id_usuario);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

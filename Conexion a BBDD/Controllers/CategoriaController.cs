@@ -25,7 +25,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = categoriaDatos.GuardarCategoria(oCategoria);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Listar");
             }
             else
             {
@@ -43,7 +43,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = categoriaDatos.EditarCategoria(oCategoria);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Listar");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Conexion_a_BBDD.Controllers
             var respuesta = categoriaDatos.EliminarCategoria(oCategoria.id_categoria);
             if (respuesta)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Listar");
             }
             else
             {
