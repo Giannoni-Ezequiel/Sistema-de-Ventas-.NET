@@ -1,8 +1,32 @@
-﻿
+﻿@model Tipo_de_cliente
 @{
     ViewData["Title"] = "EliminarTipo_de_cliente";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EliminarTipo_de_cliente</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+    <h2>Eliminar Tipo de cliente @Html.DisplayTextFor(m => m.clie_tipo_descripcion)</h2>
+        <br />
+            <form asp-action="EliminarTipo_de_cliente" asp-controller="Tipo_de_cliente" method="post">
+            <input asp-for="id_tipo_cliente" type="hidden" class="form-control" />
+            <p>¿Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.clie_tipo_descripcion)?</p>
+            <br />
+            <button type="submit" class="btn btn-danger">
+                Eliminar
+            </button>
+            <a asp-action="ListarTipo_de_cliente" asp-controller="Tipo_de_cliente" class="btn btn-warning">
+                Volver al listado
+            </a>
+        </form>
+    </body>
+</html>
 

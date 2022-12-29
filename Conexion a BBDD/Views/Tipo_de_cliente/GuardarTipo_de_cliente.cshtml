@@ -1,8 +1,30 @@
-﻿
+﻿@model Tipo_de_cliente
 @{
     ViewData["Title"] = "GuardarTipo_de_cliente";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>GuardarTipo_de_cliente</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <br />
+        <h2>Guardar Tipo de cliente</h2>
+        <br />
+        <form asp-action="GuardarTipo_de_cliente" asp-controller="Tipo_de_cliente" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Detalle</label>
+                <input asp-for="clie_tipo_descripcion" type="text" class="form-control">
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary"> Guardar</button>
+            <a asp-action="ListarTipo_de_cliente" asp-controller="Tipo_de_cliente" class="btn btn-warning">Volver al listado</a>
+        </form>
+    </body>
+</html>
 
