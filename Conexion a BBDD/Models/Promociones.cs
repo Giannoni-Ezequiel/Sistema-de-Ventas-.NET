@@ -6,7 +6,7 @@ namespace Conexion_a_BBDD.Models
     {
         [Key]
         public int id_promo { get; set; }
-        public char? promo_nombre { get; set; }
+        public string? promo_nombre { get; set; }
         public decimal? descuento { get; set; }
 
     }

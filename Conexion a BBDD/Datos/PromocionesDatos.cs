@@ -22,7 +22,7 @@ namespace Conexion_a_BBDD.Datos
                         oLista.Add(new Promociones()
                         {
                             id_promo = Convert.ToInt32(lector["id_promo"]),
-                            promo_nombre = Convert.ToChar(lector["promo_nombre"]),
+                            promo_nombre = Convert.ToString(lector["promo_nombre"]),
                             descuento = Convert.ToDecimal(lector["descuento"])
                         });
                     }
@@ -47,7 +47,7 @@ namespace Conexion_a_BBDD.Datos
                         while (lector.Read())
                         {
                             oPromociones.id_promo = Convert.ToInt32(lector["id_promo"]);
-                            oPromociones.promo_nombre = Convert.ToChar(lector["promo_nombre"]);
+                            oPromociones.promo_nombre = Convert.ToString(lector["promo_nombre"]);
                             oPromociones.descuento = Convert.ToDecimal(lector["descuento"]);
                         }
                     }
