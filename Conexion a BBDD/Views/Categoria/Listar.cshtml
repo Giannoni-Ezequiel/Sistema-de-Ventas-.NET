@@ -25,7 +25,7 @@
 								<br />
 							</div>
 							<div class="col-xs-6">
-								<a asp-action="Guardar" asp-controller="Categoria" class="btn btn-primary">
+								<a asp-action="GuardarCategoria" asp-controller="Categoria" class="btn btn-primary">
 									<i class="material-icons">&#xE147;</i> 
 									<span>Crear Categoria</span>
 								</a>
@@ -49,14 +49,14 @@
 								<tr>
 									<th>@item.id_categoria</th>
 									<th>@item.categ_detalle</th>
-									<td><a asp-action="Editar" asp-controller="CRUD" class="edit" asp-route-id="@item.id_categoria">
+									<td><a asp-action="EditarCategoria" asp-controller="Categoria" class="edit" asp-route-id="@item.id_categoria">
 											<i class="material-icons" data-toggle="tooltip" title="Edit">
 												<span class="material-symbols-outlined">
 													drive_file_rename_outline
 												</span>
 											</i>
 										</a>
-										<a asp-action="Eliminar" asp-controller="CRUD" class="bdanger" asp-route-id="@item.id_categoria">
+										<a asp-action="EliminarCategoria" asp-controller="Categoria" class="bdanger" asp-route-id="@item.id_categoria">
 											<i class="material-icons" data-toggle="tooltip" title="Delete">
 												<span class="material-symbols-outlined">
 													delete

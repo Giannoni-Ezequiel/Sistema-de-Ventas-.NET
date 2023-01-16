@@ -57,7 +57,7 @@ namespace Conexion_a_BBDD.Controllers
             return View(oDetalle_orden);
         }
         [HttpPost]
-        public ActionResult EliminarDetalle_orden(int id_orden, int id_detalle_orden)
+        public IActionResult EliminarDetalle_orden(int id_orden, int id_detalle_orden)
         {
             try
             {
@@ -66,7 +66,6 @@ namespace Conexion_a_BBDD.Controllers
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("EliminarDetalle_orden", conexionTemp);
-                    cmd.Parameters.AddWithValue("id_orden", id_orden);
                     cmd.Parameters.AddWithValue("id_detalle_orden", id_detalle_orden);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

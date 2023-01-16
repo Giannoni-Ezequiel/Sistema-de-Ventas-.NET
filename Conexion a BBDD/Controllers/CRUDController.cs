@@ -25,10 +25,7 @@ namespace Conexion_a_BBDD.Controllers
         [HttpPost]
         public IActionResult Guardar(Cliente objetoCliente)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            
             var respuesta = clienteDatos.Guardar(objetoCliente);
             if (respuesta)
             {
@@ -52,10 +49,7 @@ namespace Conexion_a_BBDD.Controllers
         [HttpPost]
         public IActionResult Editar(Cliente objetoCliente)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            
             var respuesta = clienteDatos.Editar(objetoCliente);
             if (respuesta)
             {

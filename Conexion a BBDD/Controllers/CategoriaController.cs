@@ -21,6 +21,7 @@ namespace Conexion_a_BBDD.Controllers
         }
         [HttpPost]
         public IActionResult GuardarCategoria(Categoria oCategoria)
+
         {
             var respuesta = categoriaDatos.GuardarCategoria(oCategoria);
             if (respuesta)

@@ -44,7 +44,7 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("ObtenerProveedor", conexionTemp);
 
-                    cmd.Parameters.AddWithValue("id_Prove", id_proveedor);
+                    cmd.Parameters.AddWithValue("id_proveedor", id_proveedor);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     using (var lector = cmd.ExecuteReader())

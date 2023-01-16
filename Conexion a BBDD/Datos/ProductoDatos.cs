@@ -36,14 +36,7 @@ namespace Conexion_a_BBDD.Datos
                             prod_detalle = Convert.ToString(lector["prod_detalle"]),
                             prod_img = Convert.ToString(lector["prod_img"]),
                             prod_proveedor = Convert.ToInt32(lector["prod_proveedor"]),
-                            proveedorAsociado = new Proveedor()
-                            {
-                                id_proveedor = Convert.ToInt32(lector["id_proveedor"]),
-                                provee_nombre = Convert.ToString(lector["provee_nombre"]),
-                                provee_apellido = Convert.ToString(lector["provee_apellido"]),
-                                provee_direccion = Convert.ToString(lector["provee_direccion"]),
-                                provee_cuit = Convert.ToString(lector["provee_cuit"])
-                            }
+                            
                         });
                     }//Aca ya no existe la variable lector, se destruyo
                 }//Aca ya no existe la variable conexionTemp, se destruyo
@@ -126,12 +119,12 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarProductos", conexionTemp);
-                    cmd.Parameters.AddWithValue("prod_nombre", oProducto.prod_nombre);
-                    cmd.Parameters.AddWithValue("prod_precio", oProducto.prod_precio);
-                    cmd.Parameters.AddWithValue("prod_stock", oProducto.prod_stock);
-                    cmd.Parameters.AddWithValue("prod_detalle", oProducto.prod_detalle);
-                    cmd.Parameters.AddWithValue("prod_img", oProducto.prod_img);
-                    cmd.Parameters.AddWithValue("prod_proveedor", oProducto.prod_proveedor);
+                    cmd.Parameters.AddWithValue("nombre", oProducto.prod_nombre);
+                    cmd.Parameters.AddWithValue("precio", oProducto.prod_precio);
+                    cmd.Parameters.AddWithValue("stock", oProducto.prod_stock);
+                    cmd.Parameters.AddWithValue("detalle", oProducto.prod_detalle);
+                    cmd.Parameters.AddWithValue("img", oProducto.prod_img);
+                    cmd.Parameters.AddWithValue("proveedor", oProducto.prod_proveedor);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -155,12 +148,12 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("EditarProductos", conexionTemp);
                     cmd.Parameters.AddWithValue("id_producto", oProducto.id_producto);
-                    cmd.Parameters.AddWithValue("prod_nombre", oProducto.prod_nombre);
-                    cmd.Parameters.AddWithValue("prod_precio", oProducto.prod_precio);
-                    cmd.Parameters.AddWithValue("prod_stock", oProducto.prod_stock);
-                    cmd.Parameters.AddWithValue("prod_detalle", oProducto.prod_detalle);
-                    cmd.Parameters.AddWithValue("prod_img", oProducto.prod_img);
-                    cmd.Parameters.AddWithValue("prod_proveedor", oProducto.prod_proveedor);
+                    cmd.Parameters.AddWithValue("nombre", oProducto.prod_nombre);
+                    cmd.Parameters.AddWithValue("precio", oProducto.prod_precio);
+                    cmd.Parameters.AddWithValue("stock", oProducto.prod_stock);
+                    cmd.Parameters.AddWithValue("detalle", oProducto.prod_detalle);
+                    cmd.Parameters.AddWithValue("img", oProducto.prod_img);
+                    cmd.Parameters.AddWithValue("proveedor", oProducto.prod_proveedor);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

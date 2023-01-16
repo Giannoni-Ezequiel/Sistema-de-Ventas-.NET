@@ -49,7 +49,7 @@ namespace Conexion_a_BBDD.Datos
             }
             return objetoLista;
         }
-        public Cliente Obtener(int id)
+        public Cliente Obtener(int id_cliente)
         {
             var objetoCliente = new Cliente();
             try { 
@@ -59,7 +59,7 @@ namespace Conexion_a_BBDD.Datos
             {
                 conexionTemp.Open();
                 SqlCommand cmd = new SqlCommand("ObtenerClientes", conexionTemp);
-                cmd.Parameters.AddWithValue("IdContacto", id); //id es de nuestra tabla, id_contacto es el generado ASº
+                cmd.Parameters.AddWithValue("id_cliente", id_cliente); //id es de nuestra tabla, id_contacto es el generado ASº
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 using (var lector = cmd.ExecuteReader())

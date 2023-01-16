@@ -18,6 +18,10 @@
         <br />
         <form asp-action="GuardarDetalle_orden" asp-controller="Detalle_orden" method="post">
             <div class="form-group">
+                <label for="exampleInputOrden1">Orden</label>
+            <input asp-for="id_orden" type="text" class="form-control">
+            </div>
+            <div class="form-group">
                 <label for="exampleInputEmail1">Precio</label>
             <input asp-for="det_ord_precio" type="text" class="form-control">
             </div>
