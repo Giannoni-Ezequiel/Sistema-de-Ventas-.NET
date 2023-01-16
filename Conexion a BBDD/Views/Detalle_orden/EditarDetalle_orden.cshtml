@@ -13,7 +13,9 @@
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body>
+    <br />
     <h1>Editar Detalle_orden @Html.DisplayTextFor(m => m.id_detalle_orden)</h1>
+    <br />
         <form asp-action="EditarDetalle_orden" asp-controller="Detalle_orden" method="post">
             <div class="form-group">
             <input asp-for="id_detalle_orden" type="text" class="form-control" />
@@ -29,7 +31,9 @@
                     <label for="exampleInputPassword1">Producto ID</label>
                 <input asp-for="id_producto" type="text" class="form-control">
                 </div>
+            <br />
                 <button name="submit" type="submit" id="guardar-submit" data-submit="...guardando">Guardar</button>
+            <a asp-action="ListarDetalle_orden" asp-controller="Detalle_orden" class="btn btn-warning">Volver al listado</a>
             </div>
         </form>
     </body>
