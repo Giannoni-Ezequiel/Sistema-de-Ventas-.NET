@@ -75,6 +75,7 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarDetalle_orden", conexionTemp);
+                    cmd.Parameters.AddWithValue("id_orden", oDetalle_orden.id_orden);
                     cmd.Parameters.AddWithValue("det_ord_precio", oDetalle_orden.det_ord_precio);
                     cmd.Parameters.AddWithValue("det_ord_cantidad", oDetalle_orden.det_ord_cantidad);
                     cmd.Parameters.AddWithValue("id_producto", oDetalle_orden.id_producto);

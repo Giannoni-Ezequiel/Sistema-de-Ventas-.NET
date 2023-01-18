@@ -4,11 +4,23 @@
     ViewData["Title"] = "Eliminar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+    <br />
 <div class="card">
+    
     <div class="card-header">
         Eliminar informacion de cliente
     </div>
     <div class="card-body">
+       
         <dl>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.clie_nombre)
@@ -28,3 +40,5 @@
         </form>
     </div>
 </div>
+</body>
+</html>

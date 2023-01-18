@@ -27,8 +27,6 @@ namespace Conexion_a_BBDD.Datos
                         objetoLista.Add(new Orden()
                         {
                             id_orden = Convert.ToInt32(lector["id_orden"]),
-                            ord_cliente = Convert.ToInt32(lector["ord_cliente"]),
-                            ord_vendedor = Convert.ToInt32(lector["ord_vendedor"]),
                             ord_fecha_de_generacion = Convert.ToDateTime(lector["ord_fecha_de_generacion"]),
                             ord_id_cliente = Convert.ToInt32(lector["ord_id_cliente"]),
                             ord_id_empleado = Convert.ToInt32(lector["ord_id_empleado"])
@@ -57,8 +55,6 @@ namespace Conexion_a_BBDD.Datos
                         while (lector.Read())
                         {
                             objetoOrden.id_orden = Convert.ToInt32(lector["id_orden"]);
-                            objetoOrden.ord_cliente = Convert.ToInt32(lector["ord_cliente"]);
-                            objetoOrden.ord_vendedor = Convert.ToInt32(lector["ord_vendedor"]);
                             objetoOrden.ord_fecha_de_generacion = Convert.ToDateTime(lector["ord_fecha_de_generacion"]);
                             objetoOrden.ord_id_cliente = Convert.ToInt32(lector["ord_id_cliente"]);
                             objetoOrden.ord_id_empleado = Convert.ToInt32(lector["ord_id_empleado"]);
@@ -83,8 +79,6 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarOrden", conexionTemp);
-                    cmd.Parameters.AddWithValue("cliente", objetoOrden.ord_cliente);
-                    cmd.Parameters.AddWithValue("vendedor", objetoOrden.ord_vendedor);
                     cmd.Parameters.AddWithValue("fecha_de_generacion", objetoOrden.ord_fecha_de_generacion);
                     cmd.Parameters.AddWithValue("id_cliente", objetoOrden.ord_id_cliente);
                     cmd.Parameters.AddWithValue("id_empleado", objetoOrden.ord_id_empleado);
@@ -111,8 +105,6 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("EditarOrden", conexionTemp);
                     cmd.Parameters.AddWithValue("id_orden", objetoOrden.id_orden);
-                    cmd.Parameters.AddWithValue("cliente", objetoOrden.ord_cliente);
-                    cmd.Parameters.AddWithValue("vendedor", objetoOrden.ord_vendedor);
                     cmd.Parameters.AddWithValue("fecha_de_generacion", objetoOrden.ord_fecha_de_generacion);
                     cmd.Parameters.AddWithValue("id_cliente", objetoOrden.ord_id_cliente);
                     cmd.Parameters.AddWithValue("id_empleado", objetoOrden.ord_id_empleado);

@@ -15,6 +15,7 @@
     <body>
         <br />
         <h2>Guardar Categoria/Proveedor</h2>
+        <br />
         <form asp-action="Guardarcategorias_proveedor" asp-controller="categorias_proveedor" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">ID Proveedor</label>
@@ -25,7 +26,8 @@
                 <input asp-for="id_categoria" type="text" class="form-control">
             </div>
             <br />
-            <button name="submit" type="submit" id="guardar-submit" data-submit="...Sending">Submit</button>
+        <button type="submit" class="btn btn-primary"> Guardar</button>
+        <a asp-action="Listarcategorias_proveedor" asp-controller="categorias_proveedor" class="btn btn-warning">Volver al listado</a>
         </form>
     </body>
 </html>

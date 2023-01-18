@@ -14,11 +14,11 @@
     </head>
     <body>
         <br />
-        <h2>Eliminar Usuario < @Html.DisplayTextFor(m => m.usua_correo) > </h2>
+        <h2>Eliminar Usuario  @Html.DisplayTextFor(m => m.usua_correo)  </h2>
         <br />
         <form asp-action="EliminarUsuario" asp-controller="Usuario" method="post">
             <input asp-for="id_usuario" type="hidden" class="form-control" />
-            <p>¿Seguro que quieres eliminar el registro de: @Html.DisplayTextFor(m => m.usua_correo)?</p>
+            <p>¿Seguro que quieres eliminar el registro @Html.DisplayTextFor(m => m.usua_correo)?</p>
             <br />
             <button type="submit" class="btn btn-danger">
                 Eliminar

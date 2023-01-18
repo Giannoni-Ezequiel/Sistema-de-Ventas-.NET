@@ -16,6 +16,6 @@ namespace Conexion_a_BBDD.Models
         [ForeignKey("Proveedor")]
         public int? prod_proveedor { get; set; }
 
-        public virtual Proveedor proveedorAsociado { get; set; }
+        //public virtual Proveedor proveedorAsociado { get; set; }
     }
 }

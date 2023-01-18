@@ -116,10 +116,10 @@ namespace Conexion_a_BBDD.Datos
                         while (lector.Read())
                         {
                             oUsuario.id_usuario = Convert.ToInt32(lector["id_usuario"]);
-                            oUsuario.usua_nombre = Convert.ToString(lector["Nombre"]);
-                            oUsuario.usua_correo = Convert.ToString(lector["Correo"]);
-                            oUsuario.usua_pass = Convert.ToString(lector["Clave"]);
-                            oUsuario.id_Rol = Convert.ToInt32(lector["usuario_rol"]);
+                            oUsuario.usua_nombre = Convert.ToString(lector["usua_nombre"]);
+                            oUsuario.usua_correo = Convert.ToString(lector["usua_correo"]);
+                            oUsuario.usua_pass = Convert.ToString(lector["usua_pass"]);
+                            oUsuario.id_Rol = Convert.ToInt32(lector["id_rol"]);
                         }
                     }
                 }

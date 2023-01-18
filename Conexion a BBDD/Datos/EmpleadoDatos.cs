@@ -60,7 +60,7 @@ namespace Conexion_a_BBDD.Datos
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("ObtenerEmpleado", conexionTemp);
 
-                    cmd.Parameters.AddWithValue("id_emple", id_empleado);
+                    cmd.Parameters.AddWithValue("id_empleado", id_empleado);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     using (var lector = cmd.ExecuteReader())
@@ -93,7 +93,6 @@ namespace Conexion_a_BBDD.Datos
                 {
                     conexionTemp.Open();
                     SqlCommand cmd = new SqlCommand("GuardarEmpleado", conexionTemp);
-
                     cmd.Parameters.AddWithValue("nombre", oEmpleado.emple_nombre);
                     cmd.Parameters.AddWithValue("apellido", oEmpleado.emple_apellido);
                     cmd.Parameters.AddWithValue("id_supervisor", oEmpleado.emple_id_supervisor);
